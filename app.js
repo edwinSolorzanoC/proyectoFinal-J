@@ -28,4 +28,17 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(process.cwd(), 'views'));
 
-// DE ACA PARA ABAJO AÑADIR LAS RUTAS
+
+// Ruta principal para servir el archivo principal, en este caso html login
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'public', 'login.html'));
+});
+
+// DE ACA PARA ABAJO AÑADIR LAS RUTAS EJS
+app.get('/menu', (req, res) => {
+    res.render('menu', { title: 'EJS' });
+});
+
+app.get('/registroPacientes', (req, res) => {
+    res.render('registroPacientes', { title: 'EJS' });
+});

@@ -8,5 +8,27 @@
     "mysql2": "^3.13.0",
     "node.js": "^0.0.1-security",
     "sweetalert2": "^11.17.2"
+  },
+  "name": "proyectofinal",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwinSolorzanoC/proyectoFinal-J.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwinSolorzanoC/proyectoFinal-J/issues"
+  },
+  "homepage": "https://github.com/edwinSolorzanoC/proyectoFinal-J#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
