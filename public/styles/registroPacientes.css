@@ -3,11 +3,13 @@
 .row{
     width: 100%;
 }
+
+.contenido .opciones{
+    display: flex;
+}
+
 .contenido .opciones button{
     width: 20% !important;
     margin-right: 2%;
-}
-.contenido .opciones{
-    display: flex;
 }
 

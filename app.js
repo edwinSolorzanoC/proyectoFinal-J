@@ -42,3 +42,35 @@ app.get('/menu', (req, res) => {
 app.get('/registroPacientes', (req, res) => {
     res.render('registroPacientes', { title: 'EJS' });
 });
+
+app.get('/registroInventario', (req, res) => {
+    res.render('registroInventario', {title:'ejs'});
+});
+
+app.get('/gestionarCitas', (req, res) => {
+    res.render('gestionarCitas', {title:'ejs'});
+});
+
+app.get('/registroEgresos', (req, res) => {
+    res.render('registroEgresos', {title:'ejs'});
+});
+
+app.get('/reportesIngresos', (req, res) => {
+    res.render('reportesIngresos', {title:'ejs'});
+});
+
+app.get('/reportesInventario', (req, res) => {
+    res.render('reportesInventario', {title:'ejs'});
+});
+
+app.get('/reporteCitas', (req, res) => {
+    res.render('reporteCitas', {title:'ejs'});
+});
+
+app.get('/reporteCitasCR', (req, res) => {
+    res.render('reporteCitasCR', {title:'ejs'});
+});
+
+app.get('/reporteProductosStock', (req, res) => {
+    res.render('reporteProductosStock', {title:'ejs'});
+});

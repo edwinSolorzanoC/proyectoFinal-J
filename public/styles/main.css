@@ -45,7 +45,10 @@ footer .col a{
 
 .contenido{
     width: 100%;
-    min-height: 100vh;
     padding-left: 50px;
 }
-
+.bloque-flex{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}

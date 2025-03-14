@@ -12,166 +12,69 @@
 
 
     <main>
-        <section class="navegacion">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  aria-current="page">
-                        <i class="fa-solid fa-bars-staggered"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page">
-                        <i class="fa-solid fa-house"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page">
-                        <i class="fa-solid fa-users"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" >
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="gestionarCitas.html">
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="registroEgresos.html">
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-clipboard"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="reportesIngresos.html">Reporte de Ingresos</a></li>
-                        <li><a class="dropdown-item" href="reportesInventario.html">Reporte Inventario</a></li>
-                        <li><a class="dropdown-item" href="reporteCitas.html">Reporte Citas</a></li>
-                        <li><a class="dropdown-item" href="reporteCitasCR.html">Reporte Citas Canceladas/Reprogramadas</a></li>
-                        <li><a class="dropdown-item" href="reporteProductosStock.html">Reporte Inventario Bajo Stock</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.html">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
-                </li>
-              </ul>
-
-        </section>
         
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">CLINIX</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label=""></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="menu.html">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Menú Principal</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="registroPacientes.html">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Registro Pacientes</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="registroInventarios.html">
-                            <i class="fa-solid fa-boxes-stacked"></i>
-                            <span>Registro Inventario</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="gestionarCitas.html">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>Gestionar Citas</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="registroEgresos.html">
-                            <i class="fa-solid fa-hand-holding-dollar"></i>
-                            <span>Registro de Egresos</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Reportes</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="reportesIngresos.html">Reporte de Ingresos</a></li>
-                            <li><a class="dropdown-item" href="reportesInventario.html">Reporte Inventario</a></li>
-                            <li><a class="dropdown-item" href="reporteCitas.html">Reporte Citas</a></li>
-                            <li><a class="dropdown-item" href="reporteCitasCR.html">Reporte Citas Canceladas/Reprogramadas</a></li>
-                            <li><a class="dropdown-item" href="reporteProductosStock.html">Reporte Inventario Bajo Stock</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="login.html">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Cerrar Sesión</span>
-                        </a>
-                    </li>
-                  </ul>
-            </div>
-          </div>
+        <%- include('partials/navegacion') %>
+        
         <section class="contenido">
-            
-            <div class="container d-flex justify-content-center align-items">
-                <div class="row">
-                    <form class="formulario text-center p-4 border rounded">
-                        <h1>Registro de pacientes</h1>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Primer apellido</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Segundo apellido</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Cédula</label>
-                            <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Teléfono</label>
-                            <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Género</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Selecciona una opción</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                                <option value="3">otro</option>
-                            </select>                        
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                        </div>
-                        <div class="mb-3 opciones">
-                            <button type="submit" class="btn btn-success w-100">Guardar</button>
-                        </div>
-                    </form>
+
+            <section class="bloque-flex">
+
+                <div class="container d-flex justify-content-center align-items">
+                    <div class="row">
+                        <form class="formulario text-center p-4 border rounded">
+                            <h1>Registro de pacientes</h1>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Primer apellido</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Segundo apellido</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Cédula</label>
+                                <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Teléfono</label>
+                                <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Género</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Selecciona una opción</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Femenino</option>
+                                    <option value="3">otro</option>
+                                </select>                        
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3 opciones">
+                                <button type="submit" class="btn btn-success w-100">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
+                
+            </section>
+            
+            
+
         </section>
   
     </main>
