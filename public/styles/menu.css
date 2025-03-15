@@ -25,7 +25,9 @@
     padding: 2%;
     min-height: 20vh;
 }
-
+.gestiones button, .reportes button{
+    padding: 1% 2%;
+}
 .reportes{
     padding: 2%;
     min-height: 20vh;

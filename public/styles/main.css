@@ -55,3 +55,12 @@ footer .col a{
     align-items: center;
     min-height: 90vh;
 }
+.titulo-pagina{
+    display: flex;
+    align-items: center;
+    padding: 0% 2%;
+    justify-content: space-between;
+}
+.titulo-pagina img{
+    height: 150px;
+}
