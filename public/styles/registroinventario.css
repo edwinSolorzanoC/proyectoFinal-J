@@ -1,29 +1,24 @@
 @import url(main.css);
 
 
-.row{
-    width: 100%;
-}
+
 .formulario .bloque{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .formulario .bloque-uno{
-    width: 45%;
+    width: 49%;
 }
 .formulario .bloque-dos{
-    width: 45%;
+    width: 49%;
 }
 
-.formulario button{
-    width: 10% !important;
-    
+.contenido .opciones{
+    display: flex;
 }
+
 .contenido .opciones button{
     width: 20% !important;
     margin-right: 2%;
-}
-.contenido .opciones{
-    display: flex;
 }

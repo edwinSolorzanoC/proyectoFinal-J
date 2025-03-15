@@ -74,3 +74,7 @@ app.get('/reporteCitasCR', (req, res) => {
 app.get('/reporteProductosStock', (req, res) => {
     res.render('reporteProductosStock', {title:'ejs'});
 });
+
+app.get('/seguridad', (req, res) =>{
+    res.render('seguridad', {title:'ejs'})
+})

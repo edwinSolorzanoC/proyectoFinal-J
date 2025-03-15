@@ -1,8 +1,6 @@
 @import url(main.css);
 
-.row{
-    width: 100%;
-}
+
 
 .contenido .opciones{
     display: flex;

@@ -19,51 +19,31 @@
           <section class="bloque-flex">
 
             <div class="container">
-              <h1>Reporte citas canceladas y/o reprogramadas</h1>
+              <h1>Reporte citas canceladas</h1>
 
               <input type="text" class="form-control mb-3" id="" aria-describedby="" placeholder="Buscar paciente...">
 
               <table class="table table-striped table-bordered">
                   <thead>
-                      <tr>
-                        <th scope="col">Fecha cita actual</th>
-                        <th scope="col">Fecha cita pasada</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Especialidad</th>
-                        <th scope="col">Doctor</th>
-                        <th scope="col">Paciente</th>
-                        <th scope="col">Estado</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                          <td>00/00/00</td>
-                          <td>00/00/00</td>
-                          <td>13:00 pm</td>
-                          <td>Cardiologia</td>
-                          <td>Sanchez</td>
-                          <td>Edwin Solorzano</td>
-                          <td>Reprogramada</td>
-                      </tr>
-                      <tr>
-                          <td>00/00/00</td>
-                          <td>00/00/00</td>
-                          <td>13:00 pm</td>
-                          <td>Cardiologia</td>
-                          <td>Sanchez</td>
-                          <td>Edwin Solorzano</td>
-                          <td>Cancelada</td>
-                      </tr>
-                      <tr>
-                          <td>00/00/00</td>
-                          <td>00/00/00</td>
-                          <td>13:00 pm</td>
-                          <td>Cardiologia</td>
-                          <td>Sanchez</td>
-                          <td>Edwin Solorzano</td>
-                          <td>Cancelada</td>
-                      </tr>
-                    </tbody>
+                    <tr>
+                      <th scope="col">Fecha Cita</th>
+                      <th scope="col">Hora</th>
+                      <th scope="col">Paciente</th>
+                      <th scope="col">Doctor</th>
+                      <th scope="col">Especialidad</th>
+                      <th scope="col">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>17/02/2025</td>
+                        <td>13:00 pm</td>
+                        <td>Edwin Solorzano</td>
+                        <td>Sanchez</td>
+                        <td>Cardiologia</td>
+                        <td>Cancelada</td>
+                    </tr>
+                  </tbody>
               </table>
               <button class="btn btn-success"><i class="fa-solid fa-file-pdf"></i> Generar pdf</button>            
           </div>
@@ -76,24 +56,8 @@
   
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <div class="row">
-              <div class="col">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nulla quaerat, eos alias officia error odit excepturi magnam? Ipsa facilis natus accusamus dolor sapiente magnam tenetur neque nam necessitatibus vel!</p>
+    <%- include('partials/footer') %>
 
-              </div>
-              <div class="col">
-                <p>Redes</p>
-                <a href="">facebook</a>
-                <a href="">Instagram</a>
-              </div>
-              <div class="col">
-                <p>© Clinix, 2025</p>
-              </div>
-            </div>
-          </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../public/js/slidebar.js"></script>

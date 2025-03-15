@@ -42,7 +42,10 @@ footer .col a{
     background-color: #6B8E75;
     color: white;
 }
-
+.offcanvas img{
+    height: 100px;
+    width: 100px;
+}
 .contenido{
     width: 100%;
     padding-left: 50px;
@@ -50,5 +53,5 @@ footer .col a{
 .bloque-flex{
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
 }

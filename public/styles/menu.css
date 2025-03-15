@@ -1,2 +1,32 @@
 @import url(main.css);
 
+.bienvenida{
+    background: url(../images/pasilloHospital.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    
+}
+.bienvenida .info{
+    color: white;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.291);
+    backdrop-filter: blur(10px);
+    display: flex;
+    text-align: center;
+    width: 100%;
+    padding: 0% 2%;
+}
+
+.gestiones{
+    padding: 2%;
+    min-height: 20vh;
+}
+
+.reportes{
+    padding: 2%;
+    min-height: 20vh;
+}

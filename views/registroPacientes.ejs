@@ -19,25 +19,29 @@
 
             <section class="bloque-flex">
 
-                <div class="container d-flex justify-content-center align-items">
+                <div class="container">
                     <div class="row">
-                        <form class="formulario text-center p-4 border rounded">
+                        <form class="p-4 border">
                             <h1>Registro de pacientes</h1>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                                <label for="exampleInputEmail1" class="form-label">Cedula</label>
                                 <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Primer apellido</label>
+                                <label for="exampleInputEmail1" class="form-label">Primer Nombre</label>
                                 <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Segundo apellido</label>
+                                <label for="exampleInputEmail1" class="form-label">Segundo Nombre</label>
                                 <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Cédula</label>
-                                <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="exampleInputEmail1" class="form-label">Primer Apellido</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Segundo Apellido</label>
+                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
@@ -46,19 +50,6 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
                                 <input type="email" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Teléfono</label>
-                                <input type="number" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Género</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Selecciona una opción</option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Femenino</option>
-                                    <option value="3">otro</option>
-                                </select>                        
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Dirección</label>
@@ -79,24 +70,8 @@
   
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <div class="row">
-              <div class="col">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nulla quaerat, eos alias officia error odit excepturi magnam? Ipsa facilis natus accusamus dolor sapiente magnam tenetur neque nam necessitatibus vel!</p>
+    <%- include('partials/footer') %>
 
-              </div>
-              <div class="col">
-                <p>Redes</p>
-                <a href="">facebook</a>
-                <a href="">Instagram</a>
-              </div>
-              <div class="col">
-                <p>© Clinix, 2025</p>
-              </div>
-            </div>
-          </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../public/js/slidebar.js"></script>
