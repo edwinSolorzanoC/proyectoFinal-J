@@ -34,6 +34,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(process.cwd(), 'public', 'login.html'));
 });
 
+import loginRoutes from './routes/loginRoutes.js'
+app.post('/verificarCredenciales', loginRoutes);
+
 // DE ACA PARA ABAJO AÑADIR LAS RUTAS EJS
 app.get('/menu', (req, res) => {
     res.render('menu', { title: 'EJS' });
