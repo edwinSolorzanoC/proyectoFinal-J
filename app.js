@@ -58,9 +58,8 @@ app.get('/registroEgresos', (req, res) => {
     res.render('registroEgresos', {title:'ejs'});
 });
 
-app.get('/reportesIngresos', (req, res) => {
-    res.render('reportesIngresos', {title:'ejs'});
-});
+import reporteIngresosRoutes from './routes/reporteIngresosRoutes.js'
+app.get('/reportesIngresos', reporteIngresosRoutes);
 
 app.get('/reportesInventario', (req, res) => {
     res.render('reportesInventario', {title:'ejs'});

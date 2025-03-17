@@ -18,6 +18,11 @@ loginController.verificarCredenciales = async (req, res) => {
 
             //se vuelve a verificar que la contraseña digitada sea igual a la de la bd
             if(contrasennaUsuarioLogin === resultados.contrasenna){
+
+                //guardar el nombre de usuario para mantener una sesion activa en el sistema
+                req.session.user = {
+                    nombreUsuarioSession: resultados.nombreUsuario,
+                }
                 return res.redirect('/menu?success=loginSuccess');
             }
         }
