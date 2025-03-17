@@ -42,13 +42,17 @@ app.get('/menu', (req, res) => {
     res.render('menu', { title: 'EJS' });
 });
 
+import registroPacientesRoutes from './routes/registroPacientesRoutes.js'
 app.get('/registroPacientes', (req, res) => {
     res.render('registroPacientes', { title: 'EJS' });
 });
+app.post('/registrarPaciente', registroPacientesRoutes);
 
+import registroInventarioRoutes from './routes/registroInventarioRoutes.js'
 app.get('/registroInventario', (req, res) => {
     res.render('registroInventario', {title:'ejs'});
 });
+app.post('/registrarInventario', registroInventarioRoutes)
 
 app.get('/gestionarCitas', (req, res) => {
     res.render('gestionarCitas', {title:'ejs'});

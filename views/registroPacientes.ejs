@@ -24,39 +24,39 @@
 
                 <div class="container">
                     <div class="row">
-                        <form class="p-4 border">
+                        <form class="p-4 border" action="/registrarPaciente" method="post">
                             <h1>Registro de pacientes</h1>
                             <div class="mb-3">
-                                <label for="" class="form-label">Cedula</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="cedulaPaciente" class="form-label">Cedula</label>
+                                <input type="text" class="form-control" id="cedulaPaciente" name="cedulaPaciente" aria-describedby="" placeholder="Cedula de paciente..." required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Primer Nombre</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="primerNombrePaciente" class="form-label">Primer Nombre</label>
+                                <input type="text" class="form-control" id="primerNombrePaciente" name="primerNombrePaciente" aria-describedby="" placeholder="Primer nombre de paciente..."required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Segundo Nombre</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="segundoNombrePaciente" class="form-label">Segundo Nombre</label>
+                                <input type="text" class="form-control" id="segundoNombrePaciente" name="segundoNombrePaciente" aria-describedby="" placeholder="Segundo nombre de paciente..."required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Primer Apellido</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="primerApellidoPaciente" class="form-label">Primer Apellido</label>
+                                <input type="text" class="form-control" id="primerApellidoPaciente" name="primerApellidoPaciente" aria-describedby="" placeholder="Primer apellido de paciente..."required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Segundo Apellido</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="segundoApellidoPaciente" class="form-label">Segundo Apellido</label>
+                                <input type="text" class="form-control" id="segundoApellidoPaciente" name="segundoApellidoPaciente" aria-describedby="" placeholder="Segundo apellido de paciente..."required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="fechaNacimientoPaciente" class="form-label">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" aria-describedby="" placeholder=""required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="correoElectronicoPaciente" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="correoElectronicoPaciente" name="correoElectronicoPaciente" aria-describedby="" placeholder="Correo electronico de paciente..."required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Dirección</label>
-                                <input type="text" class="form-control" id="" aria-describedby="" placeholder="Nombre paciente...">
+                                <label for="direccionPaciente" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="direccionPaciente" name="direccionPaciente" aria-describedby="" placeholder="Direccion de paciente..."required>
                             </div>
                             <div class="mb-3 opciones">
                                 <button type="submit" class="btn btn-success w-100">Guardar</button>
@@ -78,6 +78,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../public/js/slidebar.js"></script>
+
+    <script src="alerts/registroPacientesAlerts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
