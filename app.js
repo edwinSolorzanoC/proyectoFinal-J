@@ -58,9 +58,10 @@ import registroCitasRoutes from './routes/registroCitasRoutes.js'
 app.get('/gestionarCitas', registroCitasRoutes);
 app.post('/registrarCitas', registroCitasRoutes);
 
-app.get('/registroEgresos', (req, res) => {
-    res.render('registroEgresos', {title:'ejs'});
-});
+
+import registroEgresosRoutes from './routes/registroEgresosRoutes.js'
+app.get('/registroEgresos',registroEgresosRoutes);
+app.post('/realizarEgreso', registroEgresosRoutes);
 
 import reporteIngresosRoutes from './routes/reporteIngresosRoutes.js'
 app.get('/reportesIngresos', reporteIngresosRoutes);

@@ -14,6 +14,7 @@ registroCitasController.mostrarDatosMedicos = async (req, res) => {
     }
 }
 
+
 registroCitasController.registrarNuevaCita = async (req, res) => {
 
     const {

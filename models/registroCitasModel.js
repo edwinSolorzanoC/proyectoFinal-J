@@ -20,7 +20,6 @@ registroCitasModel.inicioDatosDoctores = async () => {
     }
 }
 
-
 registroCitasModel.registrarCitas = async(
     cedulaPaciente,
     especialidadCita,
@@ -46,8 +45,6 @@ registroCitasModel.registrarCitas = async(
         const idUsuarioMedico = datosDoctores[0].tb_usuarios_idtb_usuarios;
         const idPersonaMedico = datosDoctores[0].tb_usuarios_tb_persona_idtb_persona;
 
-        console.log("Datos Repartidos docotres: ", idMedico, idUsuarioMedico, idPersonaMedico)
-
         const peticionDatosPacientes = `
         SELECT idtb_pacientes, tb_persona_idtb_persona
         FROM tb_pacientes	
@@ -57,12 +54,9 @@ registroCitasModel.registrarCitas = async(
 
         const [datosPacientes] = await pool.execute(peticionDatosPacientes, [cedulaPaciente])
 
-
         const idPaciente = datosPacientes[0].idtb_pacientes;
         const idPersonaPaciente = datosPacientes[0].tb_persona_idtb_persona;
         
-        console.log("Datos Repartidos pacientes: ", idPaciente, idPersonaPaciente)
-
         const envioDatosCita = `
         INSERT INTO tb_citas(
         fecha,
@@ -91,5 +85,8 @@ registroCitasModel.registrarCitas = async(
         console.log("Error en el model de registro de citas")
     }
 }
+
+
+
 
 export default registroCitasModel;

@@ -25,23 +25,28 @@
 
                 <div class="container">
                 
-                    <form class="p-4 border">
+                    <form class="p-4 border" method="post" action="/realizarEgreso">
                         <h1>Registro de egresos</h1>
                         <div class="mb-3">
-                            <label for="">Numero Factura</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Motivo de egreso...">
+                            <label for="medicamentoEgreso">Seleccione medicamento a mover</label>
+                            <select class="form-select" aria-label="Default select example" id="medicamentoEgreso" name="medicamentoEgreso" required>
+                                <option selected disabled>Seleccione un medicamento</option>
+                                <% datosMedicamentos.forEach(dato => { %> 
+                                    <option value="<%= dato.nombre %>"><%= dato.nombre %></option>
+                                <% }); %>
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <label for="">Fecha</label>
-                            <input type="date" class="form-control" id="" aria-describedby="">
+                            <label for="cantidadProductoEgreso">Cantidad de producto</label>
+                            <input type="number" class="form-control" id="cantidadProductoEgreso" name="cantidadProductoEgreso" aria-describedby="" placeholder="Cantidad del producto a mover... "required>
                         </div>
                         <div class="mb-3">
-                            <label for="">Descripción</label>
-                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Motivo de egreso...">
+                            <label for="montoTotalEgreso">Monto total de movimiento</label>
+                            <input type="number" class="form-control" id="montoTotalEgreso" name="montoTotalEgreso" aria-describedby="" placeholder="Monto total de egreso..."required>
                         </div>
                         <div class="mb-3">
-                            <label for="">Monto Total</label>
-                            <input type="number" class="form-control" id="" aria-describedby="" placeholder="Motivo de egreso...">
+                            <label for="motivoEgreso">Motivo</label>
+                            <input type="text" class="form-control" id="motivoEgreso" name="motivoEgreso" aria-describedby="" placeholder="Motivo de egreso..."required>
                         </div>
                         <div class="mb-3 opciones">
                             <button type="submit" class="btn btn-success w-100">Añadir</button>
@@ -69,6 +74,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../public/js/slidebar.js"></script>
+
+    <script src="alerts/registroEgresosAlerts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
