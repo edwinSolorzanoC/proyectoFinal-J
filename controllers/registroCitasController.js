@@ -13,9 +13,7 @@ registroCitasController.mostrarDatosMedicos = async (req, res) => {
         console.log("Error en el controller mostrar datos medicos")
     }
 }
-
-
-registroCitasController.registrarNuevaCita = async (req, res) => {
+registroCitasController.consultaCitas = async(req,res) => {
 
     const {
         cedulaPaciente,
@@ -23,11 +21,42 @@ registroCitasController.registrarNuevaCita = async (req, res) => {
         doctorCita,
         fechaCita,
         horaCita
-    } = req.body;
 
-    const estadoCita = 1;
+    } = req.body; 
+
     try {
         
+        const resultadosDisponibilidad = await registroCitasModel.consultarDisponibilidadCita(
+            cedulaPaciente,
+            especialidadCita,
+            doctorCita,
+            fechaCita,
+            horaCita
+        )
+
+        if(resultadosDisponibilidad.length > 0){
+            return res.redirect('/gestionarCitas?success=noDisponibilidad');
+        }else{
+            await registroCitasController.registrarNuevaCita(cedulaPaciente,
+                especialidadCita,
+                doctorCita,
+                fechaCita,
+                horaCita);
+            return res.redirect('/gestionarCitas?success=citaDisponible');
+        }
+    } catch (error) {
+        console.log("Error en el controller de consultar cita",  error)
+    }
+};
+
+
+registroCitasController.registrarNuevaCita = async (cedulaPaciente,
+    especialidadCita,
+    doctorCita,
+    fechaCita,
+    horaCita) => {
+    const estadoCita = 1;
+    try {
         await registroCitasModel.registrarCitas(
             cedulaPaciente,
             especialidadCita,
@@ -36,11 +65,9 @@ registroCitasController.registrarNuevaCita = async (req, res) => {
             horaCita,
             estadoCita
         );
-        return res.redirect('/gestionarCitas?success=newRegister')
-
     } catch (error) {
-        console.log("Error en el controlador registrar Citas")
+        console.log("Error en el controlador registrar Citas", error);
     }
-}
+};
 
 export default registroCitasController;

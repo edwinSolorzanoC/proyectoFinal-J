@@ -16,7 +16,7 @@ registroPacientesModel.enviarDatosBD = async (
 
     try{
 
-        const query = `
+        const queryPersona = `
         INSERT INTO tb_persona (
         cedula,
         primerNombre,
@@ -28,7 +28,14 @@ registroPacientesModel.enviarDatosBD = async (
         direccion
         ) VALUE (?,?,?,?,?,?,?,?);`
 
-        const [results] = await pool.execute(query, [
+        const queryPacientes = `
+        INSERT INTO tb_pacientes
+        (
+        estado, 
+        tb_persona_idtb_persona)VALUE(
+        ?, ?);`
+
+        const [results] = await pool.execute(queryPersona, [
             cedulaPaciente,
             primerNombrePaciente,
             segundoNombrePaciente,
@@ -38,6 +45,13 @@ registroPacientesModel.enviarDatosBD = async (
             correoElectronicoPaciente,
             direccionPaciente
         ])
+
+        const idPersona = results.insertId
+
+        await pool.execute(queryPacientes, [
+            1, idPersona
+        ])
+
         return results
 
     }catch(error){

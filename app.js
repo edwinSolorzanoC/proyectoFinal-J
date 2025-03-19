@@ -56,31 +56,30 @@ app.post('/registrarInventario', registroInventarioRoutes)
 
 import registroCitasRoutes from './routes/registroCitasRoutes.js'
 app.get('/gestionarCitas', registroCitasRoutes);
-app.post('/registrarCitas', registroCitasRoutes);
+app.post('/consultarCita', registroCitasRoutes);
 
 
 import registroEgresosRoutes from './routes/registroEgresosRoutes.js'
 app.get('/registroEgresos',registroEgresosRoutes);
 app.post('/realizarEgreso', registroEgresosRoutes);
 
-import reporteIngresosRoutes from './routes/reporteIngresosRoutes.js'
-app.get('/reportesIngresos', reporteIngresosRoutes);
 
-app.get('/reportesInventario', (req, res) => {
-    res.render('reportesInventario', {title:'ejs'});
-});
 
-app.get('/reporteCitas', (req, res) => {
-    res.render('reporteCitas', {title:'ejs'});
-});
+import ingresoRoutes from  './routes/ingresoRoutes.js'
+app.get('/reportesIngresos',ingresoRoutes)
 
-app.get('/reporteCitasCR', (req, res) => {
-    res.render('reporteCitasCR', {title:'ejs'});
-});
+import inventarioRoutes from  './routes/inventarioRoutes.js'
+app.get('/reportesInventario',inventarioRoutes)
 
-app.get('/reporteProductosStock', (req, res) => {
-    res.render('reporteProductosStock', {title:'ejs'});
-});
+
+import citasRoutes from  './routes/citasRoutes.js'
+app.get('/reporteCitas',citasRoutes)
+
+import citasCNRoutes from  './routes/citasCNRoutes.js'
+app.get('/reporteCitasCR',citasCNRoutes)
+
+import inventarioBRoutes from  './routes/inventarioBRoutes.js'
+app.get('/reporteProductosStock',inventarioBRoutes)
 
 app.get('/seguridad', (req, res) =>{
     res.render('seguridad', {title:'ejs'})

@@ -13,40 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
         if(successType === "newRegister"){
             Swal.fire({
                 icon: "success",
-                title: "¡Cita Registrada Exitosamente!",
+                title: "Nuevo producto registrado exitosamente!",
                 showConfirmButton: false,
                 timer: 1500
             });
-        }else if(successType === "siHayEspacio"){
-
-            Swal.fire({
-                title: "¡Espacio disponible!",
-                text: "Deseas confirmar la cita !?",
-                icon: "success",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  Swal.fire({
-                    title: "Cita Confirmada!",
-                    text: "La cita fue registrada exitosamente",
-                    icon: "success"
-                  });
-                  window.location.href = "/registrarCita";
-                }else if (result.isDenied) {
-                    Swal.fire({
-                        title: "Se cancelo cita!",
-                        text: "La cita fue cancelada",
-                        icon: "warning"
-                      });
-                }
-              });
-
-        }
-
-        
+        }else if(successType === "noDisponibilidad"){
+        Swal.fire({
+            icon: "error",
+            title: "Cita no disponible",
+            text: "No hay citas disponibles en el horario asignado. Le recomendamos consultar con otro horario",
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }else if(successType === "citaDisponible"){
+      Swal.fire({
+          icon: "success",
+          title: "Cita agendada correctamente!",
+          text: "La cita se agendó automaticamente",
+          showConfirmButton: false,
+          timer: 2000
+      });
+  }
         
     }
 

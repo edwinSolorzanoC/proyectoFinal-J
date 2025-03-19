@@ -20,6 +20,36 @@ registroCitasModel.inicioDatosDoctores = async () => {
     }
 }
 
+registroCitasModel.consultarDisponibilidadCita = async(
+    cedulaPaciente,
+    especialidadCita,
+    doctorCita,
+    fechaCita,
+    horaCita
+) => {
+    const consultaCitas = `
+    SELECT fecha, hora, tb_medicos_idtb_medicos
+    FROM tb_citas
+    JOIN tb_medicos
+    ON tb_medicos.idtb_medicos = tb_medicos_idtb_medicos
+    WHERE tb_medicos_idtb_medicos = ? AND fecha = ? AND hora = ?;
+    `;
+
+    try {
+        
+        const [resultadosCitas] = await pool.execute(consultaCitas, [
+            doctorCita, fechaCita, horaCita
+        ])
+
+        return resultadosCitas
+
+    } catch (error) {
+        console.log("Error en la consulta de consultar disponibilidad");
+    }
+
+}
+
+
 registroCitasModel.registrarCitas = async(
     cedulaPaciente,
     especialidadCita,
