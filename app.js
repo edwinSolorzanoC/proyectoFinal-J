@@ -54,9 +54,9 @@ app.get('/registroInventario', (req, res) => {
 });
 app.post('/registrarInventario', registroInventarioRoutes)
 
-app.get('/gestionarCitas', (req, res) => {
-    res.render('gestionarCitas', {title:'ejs'});
-});
+import registroCitasRoutes from './routes/registroCitasRoutes.js'
+app.get('/gestionarCitas', registroCitasRoutes);
+app.post('/registrarCitas', registroCitasRoutes);
 
 app.get('/registroEgresos', (req, res) => {
     res.render('registroEgresos', {title:'ejs'});
