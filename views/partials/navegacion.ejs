@@ -12,18 +12,13 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-pen-to-square"></i> </a>
+            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-pen-to-square"></i> </a>
            
         </li>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-clipboard"></i></a>
+            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-clipboard"></i></a>
             
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/seguridad">
-                <i class="fa-solid fa-lock"></i>
-            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">
@@ -43,50 +38,90 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/menu">
-                    <i class="fa-solid fa-house"></i>
                     <span>Menú Principal</span>
                 </a>
             </li>
+            <!-- Pacientes -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pacientes</a>
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pacientes</a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="/registroPacientes" class="dropdown-item">
                         Registrar Pacientes
-                        <i class="fa-solid fa-users"></i>
                         </a>
                     </li>
                     <li>
                         <a href="/mostrarPacientes" class="dropdown-item">
                         Mostrar Pacientes
-                        <i class="fa-solid fa-users"></i>
                         </a>
                     </li>
                 </ul>
             </li>
+            <!-- Citas -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Citas</a>
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Citas</a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="/gestionarCitas" class="dropdown-item">
                         Registrar Citas
-                        <i class="fa-solid fa-users"></i>
                         </a>
                     </li>
                     <li>
                         <a href="/reporteCitas" class="dropdown-item">
                         Reporte Citas
-                        <i class="fa-solid fa-users"></i>
                         </a>
                     </li>
                     <li>
                         <a href="/mostrarCitas" class="dropdown-item">
                         Mostrar Citas
-                        <i class="fa-solid fa-users"></i>
                         </a>
                     </li>
                 </ul>
             </li>
+
+            <!-- Inventario -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Inventario</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/registroInventario" class="dropdown-item">
+                        Registrar Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/reportesInventario" class="dropdown-item">
+                        Reporte Inventario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                        Mostrar Inventario
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Finanzas -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Finanzas</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/registroEgresos" class="dropdown-item">
+                        Registrar Egresos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/reportesIngresos" class="dropdown-item">
+                        Reporte Ingresos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="%" class="dropdown-item">
+                        Mostrar Finanzas
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-pen-to-square"></i> Registros</a>
                 <ul class="dropdown-menu">
@@ -118,12 +153,6 @@
                     <li><a class="dropdown-item" href="/reporteCitasCR"> <i class="fa-solid fa-paperclip"></i> Reporte Citas Canceladas</a></li>
                     <li><a class="dropdown-item" href="/reporteProductosStock"> <i class="fa-solid fa-paperclip"></i> Reporte Inventario Bajo</a></li>
                 </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/seguridad">
-                    <i class="fa-solid fa-lock"></i>
-                    <span>Seguridad</span>
-                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">

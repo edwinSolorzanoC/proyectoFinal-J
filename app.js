@@ -42,54 +42,55 @@ app.get('/menu', (req, res) => {
     res.render('menu', { title: 'EJS' });
 });
 
-import registroPacientesRoutes from './routes/registroPacientesRoutes.js'
-app.get('/registroPacientes', (req, res) => {
-    res.render('registroPacientes', { title: 'EJS' });
-});
-app.post('/registrarPaciente', registroPacientesRoutes);
 
+// PACIENTES
+import registroPacientesRoutes from './routes/registroPacientesRoutes.js'
+app.get('/registroPacientes', (req, res) => { res.render('registroPacientes', { title: 'EJS' });});
+app.post('/registrarPaciente', registroPacientesRoutes);
+app.get('/mostrarPacientes', (req,res) => {res.render('mostrarPacientes')})
+
+
+// INVENTARIO
 import registroInventarioRoutes from './routes/registroInventarioRoutes.js'
+import inventarioBRoutes from  './routes/inventarioBRoutes.js'
+import inventarioRoutes from  './routes/inventarioRoutes.js'
+
 app.get('/registroInventario', (req, res) => {
     res.render('registroInventario', {title:'ejs'});
 });
 app.post('/registrarInventario', registroInventarioRoutes)
-
-import registroCitasRoutes from './routes/registroCitasRoutes.js'
-app.get('/gestionarCitas', registroCitasRoutes);
-app.post('/consultarCita', registroCitasRoutes);
-
-
-import registroEgresosRoutes from './routes/registroEgresosRoutes.js'
-app.get('/registroEgresos',registroEgresosRoutes);
-app.post('/realizarEgreso', registroEgresosRoutes);
-
-
-
-import ingresoRoutes from  './routes/ingresoRoutes.js'
-app.get('/reportesIngresos',ingresoRoutes)
-
-import inventarioRoutes from  './routes/inventarioRoutes.js'
 app.get('/reportesInventario',inventarioRoutes)
-
-
-import citasRoutes from  './routes/citasRoutes.js'
-app.get('/reporteCitas',citasRoutes);
-app.get('/editarCitas', (req, res) => {res.render('editarCitas',)})
-
-
-import citasCNRoutes from  './routes/citasCNRoutes.js'
-app.get('/reporteCitasCR',citasCNRoutes)
-
-import inventarioBRoutes from  './routes/inventarioBRoutes.js'
 app.get('/reporteProductosStock',inventarioBRoutes)
 
-app.get('/seguridad', (req, res) =>{
-    res.render('seguridad', {title:'ejs'})
-})
 
-import mostrarCitasRouter from './routes/mostrarCitasRouter.js'
-app.get('/mostrarCitas', mostrarCitasRouter);
 
+
+// CITAS
+import registroCitasRoutes from './routes/registroCitasRoutes.js'
 import editarCitasRouter from './routes/editarCitasRouter.js';
+import citasRoutes from  './routes/citasRoutes.js'
+import citasCNRoutes from  './routes/citasCNRoutes.js'
+import mostrarCitasRouter from './routes/mostrarCitasRouter.js'
+
+app.get('/gestionarCitas', registroCitasRoutes);
+app.post('/consultarCita', registroCitasRoutes);
+app.get('/reporteCitas',citasRoutes);
+app.get('/editarCitas', (req, res) => {res.render('editarCitas',)})
+app.get('/reporteCitasCR',citasCNRoutes)
+app.get('/mostrarCitas', mostrarCitasRouter);
 app.post('/editarCitas', editarCitasRouter)
 app.get('/editarCitasVista', editarCitasRouter);
+
+
+
+
+// FINANZAS
+import registroEgresosRoutes from './routes/registroEgresosRoutes.js'
+import ingresoRoutes from  './routes/ingresoRoutes.js'
+
+app.get('/registroEgresos',registroEgresosRoutes);
+app.post('/realizarEgreso', registroEgresosRoutes);
+app.get('/reportesIngresos',ingresoRoutes)
+
+
+

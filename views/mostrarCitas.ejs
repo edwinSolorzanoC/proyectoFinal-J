@@ -20,23 +20,28 @@
                 <%- include('partials/tituloPagina.ejs') %>
 
                 <section class="container">
-                    <form action="">
-                        <div>
-                            <label for="">Cedula Paciente</label>
-                            <input type="text" name="" id="">
+                    <form class="p-4 border" action="">
+                        <h1>Filtro de Citas</h1>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="">Cedula Paciente</label>
+                            <input class="form-control" type="text" name="" id="">
                         </div>
-                        <div>
-                            <select name="" id="">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Estado Cita</label>
+                            <select class="form-select" name="" id="">
+                                <option selected disabled>Seleccione una opcion</option>
                                 <option value="">Citas Canceladas</option>
                                 <option value="">Citas Pendiente</option>
                                 <option value="">Citas Atendida</option>
                             </select>
                         </div>
-                        <div>
-                            <button>Buscar</button>
+                        <div class="">
+                            <button class="btn btn-success">Buscar</button>
                         </div>
                     </form>
                 </section>
+
                 <section class="bloque-flex">
                     <div class="container">
                         <h1>Consulta de Citas</h1>
@@ -67,7 +72,8 @@
                                         <td id="nombreDoctor"><%= Citas.primerNombreMedico %> <%= Citas.segundoNombreMedico %> <%= Citas.primerApellidoMedico %> <%= Citas.segundoApellidoMedico %> </td>
                                         <td id="especialidad"><%= Citas.especialidad%></td>
                                         <td id="estado"><%= Citas.estado === null || Citas.estado === undefined ? 'Estado no disponible' : (Citas.estado ? 'Activo' : 'Inactivo') %></td>
-                                        <td>            <button class="mostrarEditarCitas" data-id="<%= Citas.idtb_citas %>">Editar</button>
+                                        <td>            
+                                            <button class="mostrarEditarCitas btn btn-warning" data-id="<%= Citas.idtb_citas %>">Editar</button>
                                         </td>
 
                                     </tr>

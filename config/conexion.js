@@ -8,7 +8,7 @@ dotenv.config();
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'patodonal26',
+    password: 'contrasenna de mysql',
     database: 'ingsoftware'
 })
 

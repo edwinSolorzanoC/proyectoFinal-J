@@ -18,9 +18,34 @@
         
         <%- include('partials/navegacion') %>
 
+
         <section class="contenido">
             <%- include('partials/tituloPagina.ejs') %>
 
+            <div class="container">
+                <table class="table table-striped table-bordered text-center" id="tablaInventario">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre Completo</th>
+                            <th scope="col">Fecha Nacimiento</th>
+                            <th scope="col">Correo Electronico</th>
+                            <th scope="col">Dirección</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Verifica si los datosInventario están definidos -->
+                       <tr>
+                        <td scope="col">208470215</td>
+                        <td scope="col">EDWIN GERARDO SOLORZANO CAMPOS</td>
+                        <td scope="col">26/10/2003</td>
+                        <td scope="col">edwinuno26@gmail.com</td>
+                        <td scope="col">San Isidro Atenas Alajuela</td>
+
+                       </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         
 

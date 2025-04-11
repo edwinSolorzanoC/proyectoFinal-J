@@ -28,27 +28,29 @@
                             <h1>Registro de pacientes</h1>
                             <div class="mb-3">
                                 <label for="cedulaPaciente" class="form-label">Cedula</label>
-                                <input type="text" class="form-control" id="cedulaPaciente" name="cedulaPaciente" aria-describedby="" placeholder="Cedula de paciente..." required>
+
+                                <input type="text" class="form-control" id="cedulaPaciente" name="cedulaPaciente" 
+                                pattern="\d{9}" maxlength="9" inputmode="numeric" placeholder="Cedula de paciente..." required>
                             </div>
                             <div class="mb-3">
                                 <label for="primerNombrePaciente" class="form-label">Primer Nombre</label>
-                                <input type="text" class="form-control" id="primerNombrePaciente" name="primerNombrePaciente" aria-describedby="" placeholder="Primer nombre de paciente..."required>
+                                <input type="text" class="form-control" id="primerNombrePaciente" name="primerNombrePaciente" aria-describedby="" placeholder="Primer nombre de paciente..." required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="segundoNombrePaciente" class="form-label">Segundo Nombre</label>
-                                <input type="text" class="form-control" id="segundoNombrePaciente" name="segundoNombrePaciente" aria-describedby="" placeholder="Segundo nombre de paciente..."required>
+                                <input type="text" class="form-control" id="segundoNombrePaciente" name="segundoNombrePaciente" aria-describedby="" placeholder="Segundo nombre de paciente..." oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="primerApellidoPaciente" class="form-label">Primer Apellido</label>
-                                <input type="text" class="form-control" id="primerApellidoPaciente" name="primerApellidoPaciente" aria-describedby="" placeholder="Primer apellido de paciente..."required>
+                                <input type="text" class="form-control" id="primerApellidoPaciente" name="primerApellidoPaciente" aria-describedby="" placeholder="Primer apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="segundoApellidoPaciente" class="form-label">Segundo Apellido</label>
-                                <input type="text" class="form-control" id="segundoApellidoPaciente" name="segundoApellidoPaciente" aria-describedby="" placeholder="Segundo apellido de paciente..."required>
+                                <input type="text" class="form-control" id="segundoApellidoPaciente" name="segundoApellidoPaciente" aria-describedby="" placeholder="Segundo apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="fechaNacimientoPaciente" class="form-label">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" aria-describedby="" placeholder=""required>
+                                <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" aria-describedby="" placeholder=""required >
                             </div>
                             <div class="mb-3">
                                 <label for="correoElectronicoPaciente" class="form-label">Correo Electrónico</label>
