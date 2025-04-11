@@ -14,10 +14,15 @@
         <main>
             <%- include('partials/navegacion') %>
             
+            
             <section class="contenido">
+
+                <%- include('partials/tituloPagina.ejs') %>
+
+                
                 <section class="bloque-flex">
                     <div class="container">
-                        <h1>Reporte de Citas</h1>
+                        <h1>Reporte de Citas Canceladas</h1>
                         <table class="table table-striped table-bordered text-center">
                             <thead>
                                 <tr>
@@ -32,19 +37,27 @@
                             <tbody>
                                 <!-- Verifica que datosParaFront tenga elementos -->
                                 <!-- <% console.log(datosCitasCN, "Datos EJS citas") %> -->
-                                  
-                                <% datosCitasCN.forEach(Citas => { %>
+                                <% if(datosCitasCN && datosCitasCN.length < 0) {%>
+                                    <% datosCitasCN.forEach(Citas => { %>
+                                        <tr>
+                                            <td><%= new Date(Citas.fecha).toLocaleDateString('es-ES') %></td>
+                                            <td><%= Citas.hora %></td>
+                                            <td><%= Citas.id_paciente %></td>
+                                            <td><%= Citas.nombre_medico %></td>
+                                            <td><%= Citas.especialidad %></td>
+                                            <td>
+                                                <%= Citas.estado === 0 ? 'Cancelada' : '' %>
+                                            </td>
+                                        </tr>
+                                    <% }); %> 
+                                    
+                                <% }else{ %> 
                                     <tr>
-                                        <td><%= new Date(Citas.fecha).toLocaleDateString('es-ES') %></td>
-                                        <td><%= Citas.hora %></td>
-                                        <td><%= Citas.id_paciente %></td>
-                                        <td><%= Citas.nombre_medico %></td>
-                                        <td><%= Citas.especialidad %></td>
-                                        <td>
-                                            <%= Citas.estado === 0 ? 'Cancelada' : '' %>
-                                        </td>
+                                        <td colspan="6">No hay registros</td>
                                     </tr>
-                                <% }); %>
+                                    <%}%>
+
+                               
                                   
                             </tbody>
                         </table>

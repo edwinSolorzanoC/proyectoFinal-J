@@ -13,7 +13,11 @@
 
         <main>
             <%- include('partials/navegacion') %>
+
             <section class="contenido">
+                
+                <%- include('partials/tituloPagina.ejs') %>
+
                 <section class="bloque-flex">
                     <div class="container">
                         <h1>Reporte de ingresos</h1>
@@ -27,9 +31,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Verifica que datosParaFront tenga elementos -->
-                                <!-- <% console.log(datosIngresos, "Datos EJS") %> -->
                                 
+                                <% if(datosIngresos && datosIngresos.length < 0) {%>
                                     <% datosIngresos.forEach(ingreso => { %>
                                         <tr>
                                             <td><%= new Date(ingreso.fecha).toLocaleDateString('es-ES') %></td>
@@ -37,7 +40,14 @@
                                             <td>₡ <%= ingreso.montoTotal%></td>
                                             <td><%= ingreso.tb_facturas_idtb_facturas %></td>
                                         </tr>
-                                    <% }); %>
+                                    <% }); %> 
+                                    
+                                <% }else{ %> 
+                                    <tr>
+                                        <td colspan="4">No hay registros</td>
+                                    </tr>
+                                    <%}%>
+                                
                                 
                             </tbody>
                         </table>

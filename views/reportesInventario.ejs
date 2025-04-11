@@ -7,6 +7,7 @@
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles/reporteCitas.css">
 
+
     <title>Inventario de Medicamentos</title>
 </head>
 <body>
@@ -18,9 +19,9 @@
             <%- include('partials/tituloPagina.ejs') %>
 
             <section class="bloque-flex">
-                <div class="container">
+                <div class="container" id="container">
                     <h1>Inventario Actual</h1>
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered text-center" id="tablaInventario">
                         <thead>
                             <tr>
                                 <th scope="col">Nombre</th>
@@ -53,7 +54,7 @@
                             <% } %>
                         </tbody>
                     </table>
-                    <button class="btn btn-success"><i class="fa-solid fa-file-pdf"></i> Generar PDF</button>
+                    <button type="button" class="btn btn-success" id="generarPdfInventario"><i class="fa-solid fa-file-pdf"></i> Generar PDF</button>
                 </div>
             </section>
         </section>
@@ -62,8 +63,15 @@
 
     <%- include('partials/footer') %>
 
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../public/js/slidebar.js"></script>
+    <script src="js/slidebar.js"></script>
+    
+     <!-- Agregar las librerías de jsPDF y autoTable -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
+     
+    <script type="" src="js/generarPdf.js"></script>
 </body>
 </html>

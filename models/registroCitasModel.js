@@ -112,7 +112,7 @@ registroCitasModel.registrarCitas = async(
 
 
     } catch (error) {
-        console.log("Error en el model de registro de citas")
+        console.log("Error en el model de registro de citas", error)
     }
 }
 
