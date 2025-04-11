@@ -73,7 +73,9 @@ app.get('/reportesInventario',inventarioRoutes)
 
 
 import citasRoutes from  './routes/citasRoutes.js'
-app.get('/reporteCitas',citasRoutes)
+app.get('/reporteCitas',citasRoutes);
+app.get('/editarCitas', (req, res) => {res.render('editarCitas',)})
+
 
 import citasCNRoutes from  './routes/citasCNRoutes.js'
 app.get('/reporteCitasCR',citasCNRoutes)
@@ -84,3 +86,10 @@ app.get('/reporteProductosStock',inventarioBRoutes)
 app.get('/seguridad', (req, res) =>{
     res.render('seguridad', {title:'ejs'})
 })
+
+import mostrarCitasRouter from './routes/mostrarCitasRouter.js'
+app.get('/mostrarCitas', mostrarCitasRouter);
+
+import editarCitasRouter from './routes/editarCitasRouter.js';
+app.post('/editarCitas', editarCitasRouter)
+app.get('/editarCitasVista', editarCitasRouter);

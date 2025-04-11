@@ -1,3 +1,33 @@
 
+-- Estado actual del sistema -- 
+PACIENTES
+SI Insertar
+NO mostrar
 
+INVENTARIO
+SI registrar
+NO mostrar
+SI reporte
+
+CITAS
+SI registrar
+NO mostrar
+SI reporte
+
+EGRESOS
+SI registrar
+NO mostrar
+
+INGRESOS
+NO Registrar
+NO Mostrar
+
+
+SEGURIDAD - bye bye
+
+
+
+-- NOTAS -- 
+dividir los modulos por su tipo ej. citas(mostrar,registrar,reporte,editar)
+modificar header
 

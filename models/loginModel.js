@@ -21,6 +21,8 @@ loginModel.verificarCredencialesLogin = async (nombreUsuarioLogin, contrasennaUs
   
   };
 
+  
+
 
   export default loginModel;
 

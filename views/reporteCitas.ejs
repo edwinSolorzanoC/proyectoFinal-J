@@ -36,13 +36,13 @@
                             </thead>
                             <tbody>
                                 <!-- Verifica que datosParaFront tenga elementos -->
-                                
+                                    <% console.log(datosCitas) %>
                                     <% datosCitas.forEach(Citas => { %>
                                         <tr>
                                             <td><%= new Date(Citas.fecha).toLocaleDateString('es-ES') %></td>
                                             <td><%= Citas.hora %></td>
-                                            <td><%= Citas.id_paciente%></td>
-                                            <td><%= Citas.nombre_medico %></td>
+                                            <td><%= Citas.nombreUnoPaciente %> <%= Citas.nombreDosPaciente %> <%= Citas.apellidoUnoPaciente %> <%= Citas.apellidoDosPaciente %> </td>
+                                            <td><%= Citas.primerNombreMedico %> <%= Citas.segundoNombreMedico %> <%= Citas.primerApellidoMedico %> <%= Citas.segundoApellidoMedico %> </td>
                                             <td><%= Citas.especialidad%></td>
                                             <td><%= Citas.estado === null || Citas.estado === undefined ? 'Estado no disponible' : (Citas.estado ? 'Activo' : 'Inactivo') %></td>
 

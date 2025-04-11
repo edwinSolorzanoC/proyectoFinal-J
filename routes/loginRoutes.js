@@ -7,5 +7,6 @@ import loginController from '../controllers/loginController.js'
 
 router.post('/verificarCredenciales', loginController.verificarCredenciales);
 
+
 export default router;
 
