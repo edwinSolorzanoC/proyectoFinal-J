@@ -55,7 +55,8 @@ registroPacientesModel.enviarDatosBD = async (
         return results
 
     }catch(error){
-        console.log("Erorr en el model registrar pacientes")
+        return res.redirect('/registroPacientes?error=errorRegistrer');
+        console.log("Erorr en el model registrar pacientes", error)
     }
 }
 

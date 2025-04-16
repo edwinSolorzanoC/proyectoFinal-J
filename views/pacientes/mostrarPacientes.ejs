@@ -16,11 +16,11 @@
 
     <main>
         
-        <%- include('partials/navegacion') %>
+        <%- include('../partials/navegacion') %>
 
 
         <section class="contenido">
-            <%- include('partials/tituloPagina.ejs') %>
+            <%- include('../partials/tituloPagina.ejs') %>
 
             <div class="container">
                 <table class="table table-striped table-bordered text-center" id="tablaInventario">
@@ -34,15 +34,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Verifica si los datosInventario están definidos -->
-                       <tr>
-                        <td scope="col">208470215</td>
-                        <td scope="col">EDWIN GERARDO SOLORZANO CAMPOS</td>
-                        <td scope="col">26/10/2003</td>
-                        <td scope="col">edwinuno26@gmail.com</td>
-                        <td scope="col">San Isidro Atenas Alajuela</td>
 
-                       </tr>
+                        <% if (datosPacientes.length === 0) { %>
+                            <tr>
+                                <td colspan="9" class="text-center">No hay registros de Pacientes disponibles.</td>
+                            </tr>
+                        <% } else { %>
+                            <% datosPacientes.forEach(Pacientes => { %>
+                                <tr>
+                                    <td scope="col" ><%= Pacientes.cedula %></td>
+                                    <td scope="col" ><%= Pacientes.primerNombre %> <%= Pacientes.segundoNombre %> <%= Pacientes.primerApellido %> <%= Pacientes.segundoApellido %></td>
+                                    <td scope="col" ><%= new Date(Pacientes.fechaNacimiento).toLocaleDateString('es-ES') %></td>
+                                    <td scope="col" ><%= Pacientes.correoElectronio %></td>
+                                    <td scope="col" ><%= Pacientes.direccion %></td>
+                                   
+                                </tr>
+                            <% }); %>
+                        <% } %>
+                        
                     </tbody>
                 </table>
             </div>
@@ -54,11 +63,11 @@
   
     </main>
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../public/js/slidebar.js"></script>
+    <script src="js/slidebar.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

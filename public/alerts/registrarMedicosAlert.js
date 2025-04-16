@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(successType === "newRegister"){
             Swal.fire({
                 icon: "success",
-                title: "¡Paciente registrado exitosamente!",
+                title: "Medico registrado exitosamente!",
                 showConfirmButton: false,
                 timer: 1500
             });

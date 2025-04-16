@@ -11,17 +11,14 @@
                 <i class="fa-solid fa-house"></i>
             </a>
         </li>
+
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-pen-to-square"></i> </a>
+            <a class="nav-link dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-pen-to-square"></i> </a>
            
         </li>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-clipboard"></i></a>
-            
-        </li>
+
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">
+            <a class="nav-link active" aria-current="page">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
@@ -76,6 +73,11 @@
                         Mostrar Citas
                         </a>
                     </li>
+                    <li>
+                        <a href="/reporteCitasCR" class="dropdown-item">
+                        Reporte Citas Canceladas
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -122,38 +124,19 @@
                 </ul>
             </li>
 
+            <!-- Administracion -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-pen-to-square"></i> Registros</a>
+                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Administracion</a>
                 <ul class="dropdown-menu">
-                    <li><a href="/registroPacientes" class="dropdown-item">
-                        Registro Pacientes
-                        <i class="fa-solid fa-users"></i>
-                    </a></li>
-                    <li><a href="/registroInventario" class="dropdown-item">
-                        Registro Inventario
-                        <i class="fa-solid fa-boxes-stacked"></i>
-                    </a></li>
-                    <li><a href="/gestionarCitas" class="dropdown-item">
-                        Registro Citas
-                        <i class="fa-solid fa-calendar-days"></i>
-    
-                    </a></li>
-                    <li><a href="/registroEgresos" class="dropdown-item">
-                        Registro Egresos
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                    </a></li>
+                    <li>
+                        <a href="/registrarMedicos" class="dropdown-item">
+                        Registrar Medicos
+                        </a>
+                    </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa-solid fa-clipboard"></i> Reportes</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/reportesIngresos"> <i class="fa-solid fa-paperclip"></i> Reporte de Ingresos</a></li>
-                    <li><a class="dropdown-item" href="/reportesInventario"> <i class="fa-solid fa-paperclip"></i> Reporte Inventario</a></li>
-                    <li><a class="dropdown-item" href="/reporteCitas"> <i class="fa-solid fa-paperclip"></i> Reporte Citas</a></li>
-                    <li><a class="dropdown-item" href="/reporteCitasCR"> <i class="fa-solid fa-paperclip"></i> Reporte Citas Canceladas</a></li>
-                    <li><a class="dropdown-item" href="/reporteProductosStock"> <i class="fa-solid fa-paperclip"></i> Reporte Inventario Bajo</a></li>
-                </ul>
-            </li>
+
+        
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">
                     <i class="fas fa-sign-out-alt"></i>
@@ -162,6 +145,7 @@
             </li>
             
         </ul>
+
         <img src="images/LogoFinal.png" alt="">
 
     </div>

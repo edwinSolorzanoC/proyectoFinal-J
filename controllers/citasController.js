@@ -12,7 +12,7 @@ citasController.mostrarReportesCitas = async (req, res) => {
         // Verificar que 'resultados' contenga datos antes de pasar a la vista
         
         // Asegurarse de que los datos se pasan correctamente
-        res.render("reporteCitas", { datosCitas: resultados });// Asegúrate de que datosParaFront esté definido correctamente
+        res.render("citas/reporteCitas", { datosCitas: resultados });// Asegúrate de que datosParaFront esté definido correctamente
 
     } catch (error) {
         console.log("❌ Error en mostrarReportesCitas:", error);

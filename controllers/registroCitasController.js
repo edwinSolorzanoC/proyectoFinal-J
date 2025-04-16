@@ -8,7 +8,7 @@ const registroCitasController = {};
 registroCitasController.mostrarDatosMedicos = async (req, res) => {
     try {
         const resultados = await registroCitasModel.inicioDatosDoctores();
-        res.render('gestionarCitas', {datosMedicos: resultados})
+        res.render('citas/gestionarCitas', {datosMedicos: resultados})
     } catch (error) {
         console.log("Error en el controller mostrar datos medicos")
     }
@@ -35,14 +35,14 @@ registroCitasController.consultaCitas = async(req,res) => {
         )
 
         if(resultadosDisponibilidad.length > 0){
-            return res.redirect('/gestionarCitas?success=noDisponibilidad');
+            return res.redirect('gestionarCitas?success=noDisponibilidad');
         }else{
             await registroCitasController.registrarNuevaCita(cedulaPaciente,
                 especialidadCita,
                 doctorCita,
                 fechaCita,
                 horaCita);
-            return res.redirect('/gestionarCitas?success=citaDisponible');
+            return res.redirect('gestionarCitas?success=citaDisponible');
         }
     } catch (error) {
         console.log("Error en el controller de consultar cita",  error)

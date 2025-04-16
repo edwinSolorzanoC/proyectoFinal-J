@@ -44,10 +44,11 @@ app.get('/menu', (req, res) => {
 
 
 // PACIENTES
-import registroPacientesRoutes from './routes/registroPacientesRoutes.js'
-app.get('/registroPacientes', (req, res) => { res.render('registroPacientes', { title: 'EJS' });});
+import registroPacientesRoutes from './routes/registroPacientesRoutes.js';
+import mostrarPacientesRouter from './routes/mostrarPacientesRouter.js';
+app.get('/registroPacientes', (req, res) => { res.render('pacientes/registroPacientes', { title: 'EJS' });});
 app.post('/registrarPaciente', registroPacientesRoutes);
-app.get('/mostrarPacientes', (req,res) => {res.render('mostrarPacientes')})
+app.get('/mostrarPacientes', mostrarPacientesRouter)
 
 
 // INVENTARIO
@@ -92,5 +93,6 @@ app.get('/registroEgresos',registroEgresosRoutes);
 app.post('/realizarEgreso', registroEgresosRoutes);
 app.get('/reportesIngresos',ingresoRoutes)
 
-
-
+import registrarMedicosRouter from './routes/registrarMedicosRouter.js'
+app.get('/registrarMedicos', (req, res) => { res.render('administracion/registrarMedicos', { title: 'EJS' });})
+app.post('/nuevoMedico', registrarMedicosRouter)
