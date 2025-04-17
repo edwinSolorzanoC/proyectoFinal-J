@@ -11,7 +11,7 @@ editarCitasController.mostrarDatos = async (req, res) => {
         // Llamada al modelo para consultar el usuario
         const results = await editarCitasModel.obtenerCitasSeleccionadas(id);
         
-        return res.render('editarCitas', { datosCitas: results });
+        return res.render('citas/editarCitas', { datosCitas: results });
 
     } catch (error) {
         // Manejo de errores en el controlador
@@ -25,7 +25,7 @@ editarCitasController.mostrarVista = async (req, res) => {
   
     try {
       const results = await editarCitasModel.obtenerCitasSeleccionadas(id);
-      return res.render('editarCitas', { datosCitas: results });
+      return res.render('citas/editarCitas', { datosCitas: results });
     } catch (error) {
       console.error("❌ Error en mostrarVista:", error);
       res.redirect('/');

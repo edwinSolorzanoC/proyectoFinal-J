@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/reporteCitas.css">
 
 
-    <title>Inventario de Medicamentos</title>
+    <title>Medicamentos</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
             <section class="bloque-flex">
                 <div class="container" id="container">
-                    <h1>Inventario Actual</h1>
+                    <h1>Mostrar Inventario Actual</h1>
                     <table class="table table-striped table-bordered text-center" id="tablaInventario">
                         <thead>
                             <tr>
@@ -31,6 +31,7 @@
                                 <th scope="col">Precio Compra</th>
                                 <th scope="col">Precio Venta</th>
                                 <th scope="col">Proveedor</th>
+                                <th scope="col">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,11 +41,14 @@
                                     <tr>
                                         <td><%= medicamento.nombre %></td>
                                         <td><%= medicamento.descripcion %></td>
-                                        <td><%= new Date(medicamento.FechaIngreso).toLocaleDateString('es-ES') %></td>
+                                        <td><%= new Date(medicamento.FechaIngreso).toLocaleDateString('es-ES') %></td>   
                                         <td><%= medicamento.cantidad %></td>
                                         <td>₡ <%= medicamento.precioCompra %></td>
                                         <td>₡ <%= medicamento.precioVenta %></td>
                                         <td><%= medicamento.nombre_proveedor %></td>
+                                        <td>            
+                                            <button class="btn btn-warning" data-id="">Editar</button>
+                                        </td>
                                     </tr>
                                 <% }); %>
                             <% } else { %>
@@ -54,7 +58,6 @@
                             <% } %>
                         </tbody>
                     </table>
-                    <button type="button" class="btn btn-success" id="generarPdfInventario"><i class="fa-solid fa-file-pdf"></i> Generar PDF</button>
                 </div>
             </section>
         </section>

@@ -17,6 +17,11 @@ registroInventarioController.registrarInventario = async (req, res) => {
         correoElectronicoProveedor
     } = req.body;
 
+    const tipoMovimiento = "ENTRADA PRODUCTOS";
+    const montoMovimiento = cantidadProducto * precioCompraProducto;
+    const motivoMovimiento = "COMPRA MEDICAMENTOS";
+
+    let numerofactura = Math.floor(100000 + Math.random() * 900000);
     try{
 
         const resultados = await registroInventarioModel.registrarInventario(
@@ -28,7 +33,13 @@ registroInventarioController.registrarInventario = async (req, res) => {
             precioVentaProducto,
             nombreProveedor,
             estadoProveedor,
-            correoElectronicoProveedor
+            correoElectronicoProveedor,
+
+            tipoMovimiento,
+            montoMovimiento,
+            motivoMovimiento,
+
+            numerofactura
         )
 
         return res.redirect('/registroInventario?success=newRegister')

@@ -13,7 +13,7 @@ inventarioController.mostrarReportesInventario = async (req, res) => {
         
 
         // Asegurarse de que los datos se pasan correctamente
-        res.render("reportesInventario", { datosInventario: resultados });// Asegúrate de que datosParaFront esté definido correctamente
+        res.render("inventario/reportesInventario", { datosInventario: resultados });// Asegúrate de que datosParaFront esté definido correctamente
 
     } catch (error) {
         console.log("❌ Error en mostrarReportesInventario:", error);

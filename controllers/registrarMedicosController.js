@@ -43,7 +43,7 @@ registrarMedicosController.nueviMedico = async(req,res) => {
         especialidadMedico
     );
 
-    res.redirect('/administracion/registrarMedicos?success=newRegister')
+    res.redirect('registrarMedicos?success=newRegister')
 
     try {
         

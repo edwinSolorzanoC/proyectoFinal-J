@@ -8,8 +8,8 @@ dotenv.config();
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: ''
+    password: 'patodonal26',
+    database: 'clinix'
 })
 
 pool.getConnection((err, connection) => {

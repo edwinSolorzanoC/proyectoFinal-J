@@ -11,7 +11,13 @@ registroInventarioModel.registrarInventario = async(
     precioVentaProducto,
     nombreProveedor,
     estadoProveedor,
-    correoElectronicoProveedor
+    correoElectronicoProveedor,
+
+    tipoMovimiento,
+    montoMovimiento,
+    motivoMovimiento,
+
+    numerofactura
 ) => {
 
     try{
@@ -32,7 +38,6 @@ registroInventarioModel.registrarInventario = async(
         ]);
 
         const idProveedor = proveedorResult.insertId; // Obtener el ID del proveedor
-        console.log("Datos proveedor insertados model inventario  ")
 
         const envioProductos = `
         INSERT INTO tb_medicamentos(
@@ -45,7 +50,6 @@ registroInventarioModel.registrarInventario = async(
         tb_proveedor_idtb_proveedor
         ) VALUE (?, ?, ?, ?, ?, ?, ?);`;
 
-        
 
         const [productosResult] = await pool.execute(envioProductos, [
             nombreProducto,
@@ -57,7 +61,35 @@ registroInventarioModel.registrarInventario = async(
             idProveedor
         ]);
 
-        console.log("Datos medicamentos insertados model inventario")
+        const idProducto = productosResult.insertId; // Obtener el ID del proveedor
+
+
+        
+        const envioMovimiento =  ` 
+        INSERT INTO tb_movimientosmedicamentos(
+        tipoMovimiento,
+        cantidad,
+        fechaMovimiento,
+        montoMovimiento,
+        motivo,
+        tb_medicamentos_idtb_medicamentos
+        )VALUES(?,?,?,?,?,?);`;
+
+        const [movimientoResults] = await pool.execute(envioMovimiento, [tipoMovimiento, cantidadProducto, fechaConvertida, montoMovimiento, motivoMovimiento, idProducto])
+
+        const idMovimiento = movimientoResults.insertId;
+
+        const envioEgreso =  ` 
+        INSERT INTO tb_egresos(
+        fecha,
+        descripcion,
+        montoTotal,
+        numerofactura,
+        tb_movimientosMedicamentos_idtb_movimientosMedicamentos,
+        tb_movimientosMedicamentos_tb_medicamentos_idtb_medicamentos
+        )VALUES(?,?,?,?,?,?);`;
+
+        await pool.execute(envioEgreso, [fechaConvertida, nombreProducto, montoMovimiento, numerofactura, idMovimiento, idProducto])
 
     }catch(error){
         console.log("Error en el modelo de registrar inventario", error)

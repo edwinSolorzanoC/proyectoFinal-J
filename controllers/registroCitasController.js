@@ -55,7 +55,7 @@ registroCitasController.registrarNuevaCita = async (cedulaPaciente,
     doctorCita,
     fechaCita,
     horaCita) => {
-    const estadoCita = 1;
+    const estadoCita = "PENDIENTE";
     try {
         await registroCitasModel.registrarCitas(
             cedulaPaciente,

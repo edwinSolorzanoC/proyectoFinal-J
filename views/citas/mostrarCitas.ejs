@@ -71,7 +71,7 @@
                                         <td id="nombrePaciente"><%= Citas.nombreUnoPaciente %> <%= Citas.nombreDosPaciente %> <%= Citas.apellidoUnoPaciente %> <%= Citas.apellidoDosPaciente %> </td>
                                         <td id="nombreDoctor"><%= Citas.primerNombreMedico %> <%= Citas.segundoNombreMedico %> <%= Citas.primerApellidoMedico %> <%= Citas.segundoApellidoMedico %> </td>
                                         <td id="especialidad"><%= Citas.especialidad%></td>
-                                        <td id="estado"><%= Citas.estado === null || Citas.estado === undefined ? 'Estado no disponible' : (Citas.estado ? 'Activo' : 'Inactivo') %></td>
+                                        <td id="estado"><%= Citas.estado %></td>
                                         <td>            
                                             <button class="mostrarEditarCitas btn btn-warning" data-id="<%= Citas.idtb_citas %>">Editar</button>
                                         </td>

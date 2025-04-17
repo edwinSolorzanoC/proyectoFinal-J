@@ -7,4 +7,5 @@ const router = express.Router();
 // Ruta para mostrar el reporte de ingresos
 router.get('/reportesInventario', inventarioController.mostrarReportesInventario);
 
+
 export default router;

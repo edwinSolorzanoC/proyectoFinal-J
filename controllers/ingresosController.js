@@ -13,7 +13,7 @@ ingresosController.mostrarReportesIngresos = async (req, res) => {
         
 
         // Asegurarse de que los datos se pasan correctamente
-        res.render("reportesIngresos", { datosIngresos: resultados });// Asegúrate de que datosParaFront esté definido correctamente
+        res.render("finanzas/reportesIngresos", { datosIngresos: resultados });// Asegúrate de que datosParaFront esté definido correctamente
 
     } catch (error) {
         console.log("❌ Error en mostrarReportesIngresos:", error);

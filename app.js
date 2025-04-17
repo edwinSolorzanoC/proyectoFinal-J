@@ -55,14 +55,15 @@ app.get('/mostrarPacientes', mostrarPacientesRouter)
 import registroInventarioRoutes from './routes/registroInventarioRoutes.js'
 import inventarioBRoutes from  './routes/inventarioBRoutes.js'
 import inventarioRoutes from  './routes/inventarioRoutes.js'
+import mostrarInventario from './routes/mostrarInventarioRouter.js'
 
 app.get('/registroInventario', (req, res) => {
-    res.render('registroInventario', {title:'ejs'});
+    res.render('inventario/registroInventario', {title:'ejs'});
 });
 app.post('/registrarInventario', registroInventarioRoutes)
 app.get('/reportesInventario',inventarioRoutes)
 app.get('/reporteProductosStock',inventarioBRoutes)
-
+app.get('/mostrarInventario', mostrarInventario)
 
 
 
@@ -88,10 +89,14 @@ app.get('/editarCitasVista', editarCitasRouter);
 // FINANZAS
 import registroEgresosRoutes from './routes/registroEgresosRoutes.js'
 import ingresoRoutes from  './routes/ingresoRoutes.js'
+import mostrarEgresosRouter from './routes/mostrarEgresosRouter.js';
 
 app.get('/registroEgresos',registroEgresosRoutes);
 app.post('/realizarEgreso', registroEgresosRoutes);
-app.get('/reportesIngresos',ingresoRoutes)
+app.get('/reportesIngresos',ingresoRoutes);
+app.get('/mostrarEgresos',mostrarEgresosRouter)
+app.get('/registroIngresos', (req,res) => {res.render('finanzas/registrarIngresos')})
+
 
 import registrarMedicosRouter from './routes/registrarMedicosRouter.js'
 app.get('/registrarMedicos', (req, res) => { res.render('administracion/registrarMedicos', { title: 'EJS' });})
