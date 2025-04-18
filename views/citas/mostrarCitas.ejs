@@ -72,12 +72,20 @@
                                         <td id="nombreDoctor"><%= Citas.primerNombreMedico %> <%= Citas.segundoNombreMedico %> <%= Citas.primerApellidoMedico %> <%= Citas.segundoApellidoMedico %> </td>
                                         <td id="especialidad"><%= Citas.especialidad%></td>
                                         <td id="estado"><%= Citas.estado %></td>
-                                        <td>            
-                                            <button class="mostrarEditarCitas btn btn-warning" data-id="<%= Citas.idtb_citas %>">Editar</button>
+                                        
+                                        <td>
+                                        <% if (Citas.estado === 'PENDIENTE') { %>
+                                            <button class="mostrarEditarCitas btn btn-warning" data-id="<%= Citas.idtb_citas %>">Editar</button>                                        
+                                        <% } else { %>
+                                          <button class="btn btn-secondary" disabled>No Editable</button>
+                                        <% } %>
                                         </td>
+                                        
 
                                     </tr>
                                 <% }); %>
+
+                                
 
                             </tbody>
                         </table>
@@ -90,6 +98,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="../public/js/slidebar.js"></script>
         <script src="ajax/mostrarCitas.js"></script>
+
+        
+    <script src="alerts/mostrarCitas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </body>
 </html>

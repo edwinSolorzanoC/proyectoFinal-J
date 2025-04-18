@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
           // Aquí puedes hacer el fetch o redirigir según lo necesites
           window.location.href = `/editarCitasVista?id=${idCita}`;
+          
       });
   });
+
+
+
+
 });
+

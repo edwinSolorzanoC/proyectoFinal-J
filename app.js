@@ -82,6 +82,7 @@ app.get('/reporteCitasCR',citasCNRoutes)
 app.get('/mostrarCitas', mostrarCitasRouter);
 app.post('/editarCitas', editarCitasRouter)
 app.get('/editarCitasVista', editarCitasRouter);
+app.post('/editarCitaExistente', editarCitasRouter)
 
 
 

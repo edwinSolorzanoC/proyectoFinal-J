@@ -27,8 +27,12 @@
                 <% console.log("Dato en ejs",datosCitas) %>
                 
 
-                <form class="p-4 border" action="/consultarCita" method="post">
+                <form class="p-4 border" action="/editarCitaExistente" method="post">
                     <h1>Editar citas</h1>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="idCita" name="idCita" required
+                        value="<%= datosCitas[0].idtb_citas %>" style="display: none;">
+                    </div>
                     <div class="mb-3">
                         <label for="fechaCita" class="form-label">Fecha de cita</label>
                         <input type="date" class="form-control" id="fechaCita" name="fechaCita" required
@@ -40,34 +44,34 @@
                             value="<%= datosCitas[0].hora %>">
                     </div>
                     <div class="mb-3">
-                        <label for="cedulaPaciente">Cedula Paciente</label>
-                        <input type="number" class="form-control" id="cedulaPaciente" name="cedulaPaciente" aria-describedby="" 
+                        <label for="cedulaPacienteCita">Cedula Paciente</label>
+                        <input type="number" class="form-control" id="cedulaPacienteCita" name="cedulaPacienteCita" aria-describedby="" 
                         value="<%= datosCitas[0].cedula %>" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="nombrePaciente">Nombre Paciente</label>
-                        <input type="text" class="form-control" id="nombrePaciente" name="nombrePaciente" aria-describedby=""
+                        <input type="text" class="form-control" id="nombrePacienteCita" name="nombrePacienteCita" aria-describedby=""
                         value="<%= datosCitas[0].nombreUnoPaciente %> <%= datosCitas[0].nombreDosPaciente %> <%= datosCitas[0].apellidoUnoPaciente %> <%= datosCitas[0].apellidoDosPaciente %>"
                         disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="nombreDoctor">Doctor</label>
-                        <input type="text" class="form-control" id="nombreDoctor" name="nombreDoctor" aria-describedby=""
+                        <label for="nombreDoctorCita">Doctor</label>
+                        <input type="text" class="form-control" id="nombreDoctorCita" name="nombreDoctorCita" aria-describedby=""
                         value="<%= datosCitas[0].primerNombreMedico %> <%= datosCitas[0].segundoNombreMedico %> <%= datosCitas[0].primerApellidoMedico %> <%= datosCitas[0].segundoApellidoMedico %>"
                         disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="especialidad">Especialidad</label>
-                        <input type="text" class="form-control" id="especialidad" name="especialidad" aria-describedby="" 
+                        <label for="especialidadCita">Especialidad</label>
+                        <input type="text" class="form-control" id="especialidadCita" name="especialidadCita" aria-describedby="" 
                         value="<%= datosCitas[0].especialidad %>" disabled>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="cedulaPaciente">Estado</label>
-                        <select class="form-select" aria-label="Default select example" id="doctorCita" name="doctorCita" required>
-                            <option selected disabled>Seleccione una opcion</option>
-                            <option value="">Cancelada</option>
-                            <option value="">Atendida</option>
+                        <label for="">Estado</label>
+                        <select class="form-select" aria-label="Default select example" id="estadoCita" name="estadoCita" required>
+                            <option value="<%= datosCitas[0].estado %>"> <%= datosCitas[0].estado %> </option>
+                            <option value="CANCELADA">CANCELADA</option>
+                            <option value="ATENDIDA">ATENDIDA</option>
                             
                         </select>
                     </div>

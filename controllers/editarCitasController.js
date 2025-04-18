@@ -1,5 +1,7 @@
 
 import editarCitasModel from "../models/editarCitasModel.js";
+import mostrarCitasController from "./mostrarCitasController.js";
+
 
 const editarCitasController = {};
 
@@ -30,7 +32,31 @@ editarCitasController.mostrarVista = async (req, res) => {
       console.error("❌ Error en mostrarVista:", error);
       res.redirect('/');
     }
-  };
+};
+
+editarCitasController.editarCita = async (req,res) => {
+
+
+  const {
+    idCita,
+    fechaCita,
+    horaCita,
+    estadoCita
+
+  } = req.body;
   
+
+  try {
+    
+    console.log("ID CITA : ",idCita, "FECHA CITA: ", fechaCita, "HORA CITA: ", horaCita, "ESTADO CITA: ", estadoCita)
+
+    await editarCitasModel.editarCita(idCita, fechaCita, horaCita, estadoCita);
+    return res.redirect('mostrarCitas?success=newRegistrer');
+
+
+  } catch (error) {
+    console.log("Error en el controller de editar citas", error)
+  }
+}
 
 export default editarCitasController;
