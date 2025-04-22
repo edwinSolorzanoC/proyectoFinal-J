@@ -48,7 +48,10 @@ editarCitasController.editarCita = async (req,res) => {
 
   try {
     
-    console.log("ID CITA : ",idCita, "FECHA CITA: ", fechaCita, "HORA CITA: ", horaCita, "ESTADO CITA: ", estadoCita)
+
+    if(estadoCita === "ATENDIDA"){
+      console.log("ID CITA : ",idCita, "FECHA CITA: ", fechaCita, "HORA CITA: ", horaCita, "ESTADO CITA: ", estadoCita)
+    }
 
     await editarCitasModel.editarCita(idCita, fechaCita, horaCita, estadoCita);
     return res.redirect('mostrarCitas?success=newRegistrer');

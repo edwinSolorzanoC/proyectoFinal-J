@@ -56,7 +56,7 @@ import registroInventarioRoutes from './routes/registroInventarioRoutes.js'
 import inventarioBRoutes from  './routes/inventarioBRoutes.js'
 import inventarioRoutes from  './routes/inventarioRoutes.js'
 import mostrarInventario from './routes/mostrarInventarioRouter.js'
-
+import editarInventarioRouter from './routes/editarInventarioRouter.js'
 app.get('/registroInventario', (req, res) => {
     res.render('inventario/registroInventario', {title:'ejs'});
 });
@@ -64,6 +64,8 @@ app.post('/registrarInventario', registroInventarioRoutes)
 app.get('/reportesInventario',inventarioRoutes)
 app.get('/reporteProductosStock',inventarioBRoutes)
 app.get('/mostrarInventario', mostrarInventario)
+app.get('/mostrarEditarInventario', editarInventarioRouter)
+app.post('/editarProducto', editarInventarioRouter)
 
 
 
@@ -77,10 +79,8 @@ import mostrarCitasRouter from './routes/mostrarCitasRouter.js'
 app.get('/gestionarCitas', registroCitasRoutes);
 app.post('/consultarCita', registroCitasRoutes);
 app.get('/reporteCitas',citasRoutes);
-app.get('/editarCitas', (req, res) => {res.render('editarCitas',)})
 app.get('/reporteCitasCR',citasCNRoutes)
 app.get('/mostrarCitas', mostrarCitasRouter);
-app.post('/editarCitas', editarCitasRouter)
 app.get('/editarCitasVista', editarCitasRouter);
 app.post('/editarCitaExistente', editarCitasRouter)
 

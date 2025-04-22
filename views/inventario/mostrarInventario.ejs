@@ -47,7 +47,7 @@
                                         <td>₡ <%= medicamento.precioVenta %></td>
                                         <td><%= medicamento.nombre_proveedor %></td>
                                         <td>            
-                                            <button class="btn btn-warning" data-id="">Editar</button>
+                                            <button class="mostrarEditarInventario btn btn-warning" data-id="<%= medicamento.idtb_medicamentos %>">Editar</button>
                                         </td>
                                     </tr>
                                 <% }); %>
@@ -76,5 +76,6 @@
 
      
     <script type="" src="js/generarPdf.js"></script>
+    <script src="ajax/mostrarInventario.js"></script>
 </body>
 </html>
