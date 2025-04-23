@@ -22,8 +22,6 @@ editarCitasModel.obtenerCitasSeleccionadas = async (id) => {
     `; 
     
     try {
-        
-        
         const [result] = await pool.execute(query, [id]);  
         return result;  
     } catch (error) {
@@ -42,6 +40,36 @@ editarCitasModel.editarCita = async(idCita, fechaCita, horaCita, estadoCita) => 
     WHERE idtb_citas = ?;
     `;
 
+    const queryFacturacion = `
+    INSERT INTO tb_facturas(
+    montoTotal,
+    montoCita,
+    fechaEmision,
+    
+    tb_movimientosMedicamentos_idtb_movimientosMedicamentos,
+    tb_movimientosMedicamentos_tb_medicamentos_idtb_medicamentos,
+    
+    tb_citas_idtb_citas,
+    tb_citas_tb_medicos_idtb_medicos,
+    tb_citas_tb_medicos_tb_usuarios_idtb_usuarios,
+    tb_citas_tb_medicos_tb_usuarios_tb_persona_idtb_persona,
+    tb_citas_tb_pacientes_idtb_pacientes,
+    tb_citas_tb_pacientes_tb_persona_idtb_persona
+    )VALUES(
+    10000,
+    10000,
+    '2025-04-22',
+    
+    NULL,
+    NULL,
+    
+    7,
+    9,
+    14,
+    37,
+    5,
+    33
+    ); `;
     
     try {
         

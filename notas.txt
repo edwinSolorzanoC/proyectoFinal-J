@@ -31,3 +31,4 @@ SEGURIDAD - bye bye
 dividir los modulos por su tipo ej. citas(mostrar,registrar,reporte,editar)
 modificar header
 
+agregar alertas en registrar pacientes

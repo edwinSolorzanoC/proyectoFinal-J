@@ -32,6 +32,7 @@ registroPacientesController.registrarPaciente = async (req, res) => {
 
         return res.redirect('registroPacientes')
     }catch(error){
+        return res.redirect('registroPacientes')
         console.log("Error en el controller registrar pacientes")
     }
 }

@@ -75,6 +75,7 @@ import editarCitasRouter from './routes/editarCitasRouter.js';
 import citasRoutes from  './routes/citasRoutes.js'
 import citasCNRoutes from  './routes/citasCNRoutes.js'
 import mostrarCitasRouter from './routes/mostrarCitasRouter.js'
+import precioCitaRouter from './routes/precioCitaRouter.js'
 
 app.get('/gestionarCitas', registroCitasRoutes);
 app.post('/consultarCita', registroCitasRoutes);
@@ -83,7 +84,8 @@ app.get('/reporteCitasCR',citasCNRoutes)
 app.get('/mostrarCitas', mostrarCitasRouter);
 app.get('/editarCitasVista', editarCitasRouter);
 app.post('/editarCitaExistente', editarCitasRouter)
-
+app.get('/precioCita', precioCitaRouter);
+app.post('/registrarCostosCita', precioCitaRouter)
 
 
 

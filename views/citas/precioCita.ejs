@@ -26,56 +26,65 @@
 
                 
 
-                <form class="p-4 border" action="/editarCitaExistente" method="post">
-                    <h1>Editar citas</h1>
+                <form class="p-4 border" action="/registrarCostosCita" method="post">
+                    <h1>Precio Citas</h1>
+                    
+                    <% console.log("Datos en front",datosPrecioCitas) %>
+
                     <div class="mb-3">
                         <input type="text" class="form-control" id="idCita" name="idCita" required
-                        value="<%= datosCitas[0].idtb_citas %>" style="display: none;">
+                        value="<%= datosPrecioCitas[0].idtb_citas %>" style="display: none;">
                     </div>
                     <div class="mb-3">
-                        <label for="fechaCita" class="form-label">Fecha de cita</label>
-                        <input type="date" class="form-control" id="fechaCita" name="fechaCita" required
-                            value="<%= datosCitas[0].fecha.toISOString().split('T')[0] %>">
+                        <input type="text" class="form-control" id="idMedico" name="idMedico" required
+                        value="<%= datosPrecioCitas[0].tb_medicos_idtb_medicos %>" style="display: none;">
                     </div>
                     <div class="mb-3">
-                        <label for="horaCita" class="form-label">Hora</label>
-                        <input type="time" class="form-control" id="horaCita" name="horaCita" required
-                            value="<%= datosCitas[0].hora %>">
+                        <input type="text" class="form-control" id="idMedicoUsuario" name="idMedicoUsuario" required
+                        value="<%= datosPrecioCitas[0].tb_medicos_tb_usuarios_idtb_usuarios %>" style="display: none;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="idMedicoPersona" name="idMedicoPersona" required
+                        value="<%= datosPrecioCitas[0].tb_medicos_tb_usuarios_tb_persona_idtb_persona %>" style="display: none;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="idPaciente" name="idPaciente" required
+                        value="<%= datosPrecioCitas[0].tb_pacientes_idtb_pacientes %>" style="display: none;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="idPacientePersona" name="idPacientePersona" required
+                        value="<%= datosPrecioCitas[0].tb_pacientes_tb_persona_idtb_persona %>" style="display: none;">
                     </div>
                     <div class="mb-3">
                         <label for="cedulaPacienteCita">Cedula Paciente</label>
                         <input type="number" class="form-control" id="cedulaPacienteCita" name="cedulaPacienteCita" aria-describedby="" 
-                        value="<%= datosCitas[0].cedula %>" disabled>
+                        value="<%= datosPrecioCitas[0].cedula %>" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="nombrePaciente">Nombre Paciente</label>
                         <input type="text" class="form-control" id="nombrePacienteCita" name="nombrePacienteCita" aria-describedby=""
-                        value="<%= datosCitas[0].nombreUnoPaciente %> <%= datosCitas[0].nombreDosPaciente %> <%= datosCitas[0].apellidoUnoPaciente %> <%= datosCitas[0].apellidoDosPaciente %>"
+                        value="<%= datosPrecioCitas[0].nombreUnoPaciente %> <%= datosPrecioCitas[0].nombreDosPaciente %> <%= datosPrecioCitas[0].apellidoUnoPaciente %> <%= datosPrecioCitas[0].apellidoDosPaciente %>"
                         disabled>
                     </div>
                     <div class="mb-3">
                         <label for="nombreDoctorCita">Doctor</label>
                         <input type="text" class="form-control" id="nombreDoctorCita" name="nombreDoctorCita" aria-describedby=""
-                        value="<%= datosCitas[0].primerNombreMedico %> <%= datosCitas[0].segundoNombreMedico %> <%= datosCitas[0].primerApellidoMedico %> <%= datosCitas[0].segundoApellidoMedico %>"
+                        value="<%= datosPrecioCitas[0].primerNombreMedico %> <%= datosPrecioCitas[0].segundoNombreMedico %> <%= datosPrecioCitas[0].primerApellidoMedico %> <%= datosPrecioCitas[0].segundoApellidoMedico %>"
                         disabled>
                     </div>
                     <div class="mb-3">
                         <label for="especialidadCita">Especialidad</label>
                         <input type="text" class="form-control" id="especialidadCita" name="especialidadCita" aria-describedby="" 
-                        value="<%= datosCitas[0].especialidad %>" disabled>
+                        value="<%= datosPrecioCitas[0].especialidad %>" disabled>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="">Estado</label>
-                        <select class="form-select" aria-label="Default select example" id="estadoCita" name="estadoCita" required>
-                            <option value="<%= datosCitas[0].estado %>"> <%= datosCitas[0].estado %> </option>
-                            <option value="CANCELADA">CANCELADA</option>                            
-                        </select>
+                        <label for="">Costo cita</label>
+                        <input type="number" class="form-control"  name="costoCita" id="costoCita" placeholder="Costo por servicios">
                     </div>
                     
-                    <div class="mb-3 opciones" style="display: flex;">
-                        <button type="submit" class="btn btn-success m-1">Editar Cita</button>
-                        <button type="button" class="btn btn-warning finalizarCita m-1" id="finalizarCita" data-id="<%= datosCitas[0].idtb_citas %>" >Cita Finalizada</button>
+                    <div class="mb-3 opciones">
+                        <button type="submit" class="btn btn-success">Confirmar Cita</button>
                     </div>
                 </form>
                 
@@ -95,7 +104,6 @@
     <script src="../public/js/slidebar.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/ajax/editarCitas.js"></script>
 
 </body>
 </html>
