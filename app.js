@@ -100,7 +100,18 @@ app.get('/reportesIngresos',ingresoRoutes);
 app.get('/mostrarEgresos',mostrarEgresosRouter)
 app.get('/registroIngresos', (req,res) => {res.render('finanzas/registrarIngresos')})
 
-
+// ADMINISTRACION
 import registrarMedicosRouter from './routes/registrarMedicosRouter.js'
 app.get('/registrarMedicos', (req, res) => { res.render('administracion/registrarMedicos', { title: 'EJS' });})
 app.post('/nuevoMedico', registrarMedicosRouter)
+
+
+
+// FACTURACION
+
+import facturacionRouter from './routes/facturacionRouter.js'
+app.get('/facturacion', facturacionRouter)
+
+
+
+

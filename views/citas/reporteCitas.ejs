@@ -35,6 +35,8 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                                <% if(datosCitas && datosCitas.length > 0) {%>
                                 <!-- Verifica que datosParaFront tenga elementos -->
                                     <% datosCitas.forEach(Citas => { %>
                                         <tr>
@@ -47,7 +49,12 @@
 
                                         </tr>
                                     <% }); %>
-                                
+                                    <% }else{ %> 
+                                        <tr>
+                                            <td colspan="6">No hay registros</td>
+                                        </tr>
+                                        <%}%>
+    
                             </tbody>
                         </table>
                         <button class="btn btn-success" id="generarPdfInventario"><i class="fa-solid fa-file-pdf"></i> Generar PDF</button>

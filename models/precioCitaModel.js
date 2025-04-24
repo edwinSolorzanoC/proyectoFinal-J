@@ -49,7 +49,9 @@ precioCitaModel.insertarCostos = async(
     idPacientePersona,
 
     estadoCita,
-    descripcionIngreso
+    descripcionIngreso,
+
+    medicamentos
 ) => {
 
     const queryInsertar =  `
@@ -96,8 +98,25 @@ precioCitaModel.insertarCostos = async(
     montoTotal,
     tb_facturas_idtb_facturas
     )VALUES(
-    ?, ?, ?, ?);
-`
+    ?, ?, ?, ?);`
+
+    const queryActualizarMedicamento = `
+    UPDATE tb_medicamentos
+    SET cantidad = cantidad - 1
+    WHERE idtb_medicamentos = ?;
+    `;
+
+    const queryRegistrarMovimiento = `
+    INSERT INTO tb_movimientosmedicamentos(
+    tipoMovimiento,
+    cantidad,
+    fechaMovimiento,
+    montoMovimiento,
+    motivo,
+    tb_medicamentos_idtb_medicamentos
+    )VALUES(?, ?, ?, ?, ?, ?);
+    `;
+
     try {
 
         const [resultsFactura] = await pool.execute(queryInsertar, [
@@ -115,11 +134,41 @@ precioCitaModel.insertarCostos = async(
         await pool.execute(queryCita, [ estadoCita, idCita]);
 
         await pool.execute(queryIngresos, [fechaDeHoy, descripcionIngreso, costoTotal, idFactura])
+
+         
+         for (const idMedicamento of medicamentos) {
+            
+            await pool.execute(queryActualizarMedicamento, [idMedicamento]);
+
+           
+            await pool.execute(queryRegistrarMovimiento, [
+                "VENTA MEDICAMENTO",  
+                1,
+                fechaDeHoy,
+                costoCita,   // Puedes ajustar el monto relacionado al medicamento si aplica
+                "Venta por Cita",  // Motivo del movimiento
+                idMedicamento
+            ]);
+        }
         
     } catch (error) {
         console.log("Error en el model de insertar costos", error)
     }
 }
+precioCitaModel.buscarMedicamentos = async (medicamentos) => {
+    const placeholders = medicamentos.map(() => '?').join(', ');
+    const query = `SELECT precioVenta FROM tb_medicamentos WHERE idtb_medicamentos IN (${placeholders})`;
+
+    try {
+        const [resultados] = await pool.execute(query, medicamentos); // <-- aquí se pasa el array plano
+        return [resultados];
+    } catch (error) {
+        console.log("Error en pedir medicamentos", error);
+    }
+};
+
+
+
 
 
 export default precioCitaModel

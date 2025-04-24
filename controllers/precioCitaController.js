@@ -25,22 +25,41 @@ precioCitaController.insertarCostos = async(req,res) => {
   const {
     idCita,
     idMedico, idMedicoUsuario, idMedicoPersona,
-    idPaciente, idPacientePersona, costoCita
+    idPaciente, idPacientePersona, costoCita,
+    medicamentos
   } = req.body;
 
   const fechaDeHoy = new Date().toISOString().slice(0, 10); // Formato: YYYY-MM-DD
-  const costoTotal = costoCita;
+
+  let costoTotal = costoCita;  // Usamos let porque vamos a modificar el valor
 
   const estadoCita = "ATENDIDA";
   const descripcionIngreso = "INGRESO POR CITA";
 
   console.log("REQ BODY COMPLETO:", req.body);
+  console.log("Costo total calculado:", costoTotal);
 
 
+  if (medicamentos && medicamentos.length > 0) {
+    const [resultadosMedicamentos] = await precioCitaModel.buscarMedicamentos(medicamentos);
+    console.log("contorller resultado: ",resultadosMedicamentos)
+
+    console.log(resultadosMedicamentos[0].precioVenta)
+
+    for (let i = 0; i < resultadosMedicamentos.length; i++) {
+      costoTotal = parseFloat(costoTotal) + parseFloat(resultadosMedicamentos[i].precioVenta);
+      console.log("for: ", costoTotal)
+    }
+    
+    
+
+    console.log("Costo total: ",costoTotal)
+  }
+  
   try {
 
     await precioCitaModel.insertarCostos(
-      costoTotal,costoCita, fechaDeHoy, 
+      costoTotal,costoCita, fechaDeHoy,
 
       idCita,
       idMedico,
@@ -59,7 +78,6 @@ precioCitaController.insertarCostos = async(req,res) => {
     
   } catch (error) {
     console.log("Error en el controlador de registrar precios citas", error);
-    
   }
 }
 
