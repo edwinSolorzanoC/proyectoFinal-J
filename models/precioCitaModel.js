@@ -18,12 +18,19 @@ precioCitaModel.obtenerCitasSeleccionadas = async (id) => {
     JOIN tb_persona tablaPersonaMedicos ON tablaMedicos.tb_usuarios_tb_persona_idtb_persona = tablaPersonaMedicos.idtb_persona
     WHERE idtb_citas = ?;
     `; 
+
+    const queryMedicamentos = `SELECT idtb_medicamentos, nombre FROM tb_medicamentos`;
     
     try {
         
         
-        const [result] = await pool.execute(query, [id]);  
-        return result;  
+        const [result] = await pool.execute(query, [id]);
+        const [resultsMedicamentos] = await pool.execute(queryMedicamentos)
+        return {
+            datosPrecioCitas: result,
+            medicamentos: resultsMedicamentos
+          };
+          
     } catch (error) {
         console.error("Error al obtener los de citas model precio:", error);
         

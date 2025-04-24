@@ -8,8 +8,10 @@ precioCitaController.mostrarVista = async (req, res) => {
     const id = req.query.id; // <-- lo sacamos de la URL
   
     try {
-      const results = await precioCitaModel.obtenerCitasSeleccionadas(id);
-      return res.render('citas/precioCita', { datosPrecioCitas: results });
+      const { datosPrecioCitas, medicamentos } = await precioCitaModel.obtenerCitasSeleccionadas(id);
+      return res.render('citas/precioCita', { datosPrecioCitas: datosPrecioCitas, listaMedicamentos: medicamentos });
+      
+
     } catch (error) {
       console.error("❌ Error en mostrarVista precios:", error);
       res.redirect('/');
@@ -48,7 +50,9 @@ precioCitaController.insertarCostos = async(req,res) => {
       idPacientePersona,
 
       estadoCita,
-      descripcionIngreso
+      descripcionIngreso,
+
+      medicamentos
     );
 
     mostrarCitasController.mostrarReportesCitas(req,res);

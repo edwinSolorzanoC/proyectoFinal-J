@@ -29,7 +29,7 @@
                 <form class="p-4 border" action="/registrarCostosCita" method="post">
                     <h1>Precio Citas</h1>
                     
-                    <% console.log("Datos en front",datosPrecioCitas) %>
+                    <% console.log(datosPrecioCitas, listaMedicamentos) %>
 
                     <div class="mb-3">
                         <input type="text" class="form-control" id="idCita" name="idCita" required
@@ -83,6 +83,30 @@
                         <input type="number" class="form-control"  name="costoCita" id="costoCita" placeholder="Costo por servicios">
                     </div>
                     
+                    <!-- Este es el que se muestra -->
+                    <div class="mb-2" id="contenedor-medicamentos">
+                        <label for="">Medicamentos Utilizados</label>
+                        <select class="form-select" name="medicamentos[]">
+                        <option selected disabled>Seleccione una opcion</option>
+                        <% listaMedicamentos.forEach(dato => { %> 
+                            <option value="<%= dato.idtb_medicamentos %>"><%= dato.nombre %></option>
+                        <% }); %>
+                        </select>
+                    </div>
+                    
+                    <!-- Este es el SELECT plantilla, oculto -->
+                    <select id="plantilla-medicamento" class="d-none form-select">
+                        <option selected disabled>Seleccione una opcion</option>
+                        <% listaMedicamentos.forEach(dato => { %> 
+                        <option value="<%= dato.idtb_medicamentos %>"><%= dato.nombre %></option>
+                        <% }); %>
+                    </select>
+                                        <div class="mb-3">
+                        <button class="btn btn-info" type="button" onclick="agregarMedicamento()">Agregar otro medicamento</button>
+
+                    </div>
+
+                    
                     <div class="mb-3 opciones">
                         <button type="submit" class="btn btn-success">Confirmar Cita</button>
                     </div>
@@ -96,6 +120,10 @@
 
   
     </main>
+
+   <script src="/js/precioCita.js"></script>
+
+    <%- include('../partials/ayuda') %>
 
     <%- include('../partials/footer') %>
 
