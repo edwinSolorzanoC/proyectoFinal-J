@@ -36,19 +36,23 @@
                         </div>
                         <div class="mb-3">
                             <label for="primerNombreMedico" class="form-label">Primer Nombre</label>
-                            <input type="text" class="form-control" id="primerNombreMedico" name="primerNombreMedico" aria-describedby="" placeholder="Primer nombre de Medico..." required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                            <input type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                            id="primerNombreMedico" name="primerNombreMedico" aria-describedby="" placeholder="Primer nombre de Medico..." required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="mb-3">
                             <label for="segundoNombreMedico" class="form-label">Segundo Nombre</label>
-                            <input type="text" class="form-control" id="segundoNombreMedico" name="segundoNombreMedico" aria-describedby="" placeholder="Segundo nombre de Medico..." oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                            <input type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                             id="segundoNombreMedico" name="segundoNombreMedico" aria-describedby="" placeholder="Segundo nombre de Medico..." oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="mb-3">
                             <label for="primerApellidoMedico" class="form-label">Primer Apellido</label>
-                            <input type="text" class="form-control" id="primerApellidoMedico" name="primerApellidoMedico" aria-describedby="" placeholder="Primer apellido de Medico..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                            <input type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                             id="primerApellidoMedico" name="primerApellidoMedico" aria-describedby="" placeholder="Primer apellido de Medico..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="mb-3">
                             <label for="segundoApellidoMedico" class="form-label">Segundo Apellido</label>
-                            <input type="text" class="form-control" id="segundoApellidoMedico" name="segundoApellidoMedico" aria-describedby="" placeholder="Segundo apellido de Medico..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                            <input type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                             id="segundoApellidoMedico" name="segundoApellidoMedico" aria-describedby="" placeholder="Segundo apellido de Medico..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="mb-3">
                             <label for="cedulaMedico" class="form-label">Especialidad</label>
@@ -59,6 +63,12 @@
                             <label for="fechaNacimientoMedico" class="form-label">Fecha de nacimiento</label>
                             <input type="date" class="form-control" id="fechaNacimientoMedico" name="fechaNacimientoMedico" aria-describedby="" placeholder=""required >
                         </div>
+                        <script>
+                            // Obtener la fecha actual en formato YYYY-MM-DD
+                            const today = new Date().toISOString().split('T')[0];
+                            // Asignar la fecha de hoy como la fecha máxima permitida
+                            document.getElementById('fechaNacimientoMedico').setAttribute('max', today);
+                        </script>
                         <div class="mb-3">
                             <label for="correoElectronicoMedico" class="form-label">Correo Electrónico</label>
                             <input type="email" class="form-control" id="correoElectronicoMedico" name="correoElectronicoMedico" aria-describedby="" placeholder="Correo electronico de Medico..."required>

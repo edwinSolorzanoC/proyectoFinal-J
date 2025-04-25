@@ -19,6 +19,7 @@
 
                 <%- include('../partials/tituloPagina.ejs') %>
 
+                <% console.log(datosCitasCN) %>
                 
                 <section class="bloque-flex">
                     <div class="container">
@@ -37,13 +38,13 @@
                             <tbody>
                                 <!-- Verifica que datosParaFront tenga elementos -->
                                 <!-- <% console.log(datosCitasCN, "Datos EJS citas") %> -->
-                                <% if(datosCitasCN && datosCitasCN.length < 0) {%>
+                                <% if(datosCitasCN && datosCitasCN.length > 0) {%>
                                     <% datosCitasCN.forEach(Citas => { %>
                                         <tr>
                                             <td><%= new Date(Citas.fecha).toLocaleDateString('es-ES') %></td>
                                             <td><%= Citas.hora %></td>
-                                            <td><%= Citas.id_paciente %></td>
-                                            <td><%= Citas.nombre_medico %></td>
+                                            <td><%= Citas.primerApellido_paciente %> <%= Citas.segundoApellido_paciente %> <%= Citas.primerNombre_paciente %> <%= Citas.segundoNombre_paciente %></td>
+                                            <td><%= Citas.primerApellido_medico %> <%= Citas.segundoApellido_medico %> <%= Citas.primerNombre_medico %> <%= Citas.segundoNombre_medico %></td>
                                             <td><%= Citas.especialidad %></td>
                                             <td>
                                                 <%= Citas.estado%>

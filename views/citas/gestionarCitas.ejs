@@ -52,6 +52,12 @@
                             <label for="fechaCita" class="form-label">Fecha de cita</label>
                             <input type="date" class="form-control" id="fechaCita" name="fechaCita" aria-describedby="" placeholder="Nombre..." required >
                         </div>
+                        <script>
+                            // Obtener la fecha actual en formato YYYY-MM-DD
+                            const today = new Date().toISOString().split('T')[0];
+                            // Asignar la fecha de hoy como la fecha mínima permitida
+                            document.getElementById('fechaCita').setAttribute('min', today);
+                        </script>
                         <div class="mb-3">
                             <label for="horaCita" class="form-label">Hora</label>
                             <input type="time" class="form-control" id="horaCita" name="horaCita" aria-describedby="" placeholder="Nombre..." required>

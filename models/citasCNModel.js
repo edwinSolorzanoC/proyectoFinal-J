@@ -5,7 +5,39 @@ const citasCNModel = {};
 
 // Función para obtener los ingresos
 citasCNModel.obtenerCitasSeleccionadas = async () => {
-    const query = 'SELECT c.fecha, c.hora,c.tb_pacientes_idtb_pacientes AS id_paciente,u.nombreUsuario AS nombre_medico,m.especialidad, c.estado FROM tb_citas c JOIN tb_medicos m ON c.tb_medicos_idtb_medicos = m.idtb_medicos JOIN tb_usuarios u ON m.tb_usuarios_idtb_usuarios = u.idtb_usuarios WHERE c.estado = 0;'; // Asegúrate de que la tabla "ingresos" exista en tu base de datos
+    const query = `
+SELECT 
+    c.fecha, 
+    c.hora, 
+    p.primerNombre AS primerNombre_paciente, 
+    p.segundoNombre AS segundoNombre_paciente, 
+    p.primerApellido AS primerApellido_paciente, 
+    p.segundoApellido AS segundoApellido_paciente,
+    pm.primerNombre AS primerNombre_medico, 
+    pm.segundoNombre AS segundoNombre_medico, 
+    pm.primerApellido AS primerApellido_medico, 
+    pm.segundoApellido AS segundoApellido_medico, 
+    m.especialidad, 
+    c.estado 
+FROM 
+    tb_citas c 
+JOIN 
+    tb_medicos m 
+    ON c.tb_medicos_idtb_medicos = m.idtb_medicos 
+JOIN 
+    tb_usuarios u 
+    ON m.tb_usuarios_idtb_usuarios = u.idtb_usuarios 
+JOIN 
+    tb_persona p 
+    ON c.tb_pacientes_tb_persona_idtb_persona = p.idtb_persona 
+JOIN 
+    tb_persona pm 
+    ON m.tb_usuarios_tb_persona_idtb_persona = pm.idtb_persona 
+WHERE 
+    c.estado = "CANCELADA";
+
+    
+    `
     try {
         // Consulta a la base de datos (ajusta el query a tus necesidades)
         

@@ -34,24 +34,33 @@
                             </div>
                             <div class="mb-3">
                                 <label for="primerNombrePaciente" class="form-label">Primer Nombre</label>
-                                <input type="text" class="form-control" id="primerNombrePaciente" name="primerNombrePaciente" aria-describedby="" placeholder="Primer nombre de paciente..." required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                <input type="text" class="form-control" id="primerNombrePaciente" name="primerNombrePaciente" aria-describedby="" 
+                                oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')" placeholder="Primer nombre de paciente..." required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="segundoNombrePaciente" class="form-label">Segundo Nombre</label>
-                                <input type="text" class="form-control" id="segundoNombrePaciente" name="segundoNombrePaciente" aria-describedby="" placeholder="Segundo nombre de paciente..." oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                <input type="text" class="form-control" id="segundoNombrePaciente" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                                name="segundoNombrePaciente" aria-describedby="" placeholder="Segundo nombre de paciente..." oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="primerApellidoPaciente" class="form-label">Primer Apellido</label>
-                                <input type="text" class="form-control" id="primerApellidoPaciente" name="primerApellidoPaciente" aria-describedby="" placeholder="Primer apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                <input oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                                 type="text" class="form-control" id="primerApellidoPaciente" name="primerApellidoPaciente" aria-describedby="" placeholder="Primer apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="segundoApellidoPaciente" class="form-label">Segundo Apellido</label>
-                                <input type="text" class="form-control" id="segundoApellidoPaciente" name="segundoApellidoPaciente" aria-describedby="" placeholder="Segundo apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                <input oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')" type="text" class="form-control" id="segundoApellidoPaciente" name="segundoApellidoPaciente" aria-describedby="" placeholder="Segundo apellido de paciente..."required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <div class="mb-3">
                                 <label for="fechaNacimientoPaciente" class="form-label">Fecha de nacimiento</label>
                                 <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" aria-describedby="" placeholder=""required >
                             </div>
+                            <script>
+                                // Obtener la fecha de hoy en formato YYYY-MM-DD
+                                const today = new Date().toISOString().split('T')[0];
+                                // Asignar la fecha de hoy como máximo permitido
+                                document.getElementById('fechaNacimientoPaciente').setAttribute('max', today);
+                            </script>
                             <div class="mb-3">
                                 <label for="correoElectronicoPaciente" class="form-label">Correo Electrónico</label>
                                 <input type="email" class="form-control" id="correoElectronicoPaciente" name="correoElectronicoPaciente" aria-describedby="" placeholder="Correo electronico de paciente..."required>
